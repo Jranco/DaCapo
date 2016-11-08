@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E91386431DD1A70E001CE163 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386421DD1A70E001CE163 /* AppDelegate.swift */; };
+		E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386441DD1A70E001CE163 /* FirstViewController.swift */; };
+		E91386471DD1A70E001CE163 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386461DD1A70E001CE163 /* SecondViewController.swift */; };
+		E913864A1DD1A70E001CE163 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91386481DD1A70E001CE163 /* Main.storyboard */; };
+		E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E913864B1DD1A70E001CE163 /* Assets.xcassets */; };
+		E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */; };
+		E913865A1DD1A70E001CE163 /* DaCapoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386591DD1A70E001CE163 /* DaCapoTests.swift */; };
+		E91386651DD1A70E001CE163 /* DaCapoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386641DD1A70E001CE163 /* DaCapoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E91386561DD1A70E001CE163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E91386371DD1A70E001CE163 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E913863E1DD1A70E001CE163;
+			remoteInfo = DaCapo;
+		};
+		E91386611DD1A70E001CE163 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E91386371DD1A70E001CE163 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E913863E1DD1A70E001CE163;
+			remoteInfo = DaCapo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E913863F1DD1A70E001CE163 /* DaCapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaCapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91386421DD1A70E001CE163 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E91386441DD1A70E001CE163 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E91386461DD1A70E001CE163 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E91386491DD1A70E001CE163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E913864B1DD1A70E001CE163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E913864E1DD1A70E001CE163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E91386501DD1A70E001CE163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E91386551DD1A70E001CE163 /* DaCapoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaCapoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91386591DD1A70E001CE163 /* DaCapoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaCapoTests.swift; sourceTree = "<group>"; };
+		E913865B1DD1A70E001CE163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E91386601DD1A70E001CE163 /* DaCapoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaCapoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91386641DD1A70E001CE163 /* DaCapoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaCapoUITests.swift; sourceTree = "<group>"; };
+		E91386661DD1A70E001CE163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E913863C1DD1A70E001CE163 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91386521DD1A70E001CE163 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E913865D1DD1A70E001CE163 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E91386361DD1A70E001CE163 = {
+			isa = PBXGroup;
+			children = (
+				E91386411DD1A70E001CE163 /* DaCapo */,
+				E91386581DD1A70E001CE163 /* DaCapoTests */,
+				E91386631DD1A70E001CE163 /* DaCapoUITests */,
+				E91386401DD1A70E001CE163 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E91386401DD1A70E001CE163 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E913863F1DD1A70E001CE163 /* DaCapo.app */,
+				E91386551DD1A70E001CE163 /* DaCapoTests.xctest */,
+				E91386601DD1A70E001CE163 /* DaCapoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E91386411DD1A70E001CE163 /* DaCapo */ = {
+			isa = PBXGroup;
+			children = (
+				E91386421DD1A70E001CE163 /* AppDelegate.swift */,
+				E91386441DD1A70E001CE163 /* FirstViewController.swift */,
+				E91386461DD1A70E001CE163 /* SecondViewController.swift */,
+				E91386481DD1A70E001CE163 /* Main.storyboard */,
+				E913864B1DD1A70E001CE163 /* Assets.xcassets */,
+				E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */,
+				E91386501DD1A70E001CE163 /* Info.plist */,
+			);
+			path = DaCapo;
+			sourceTree = "<group>";
+		};
+		E91386581DD1A70E001CE163 /* DaCapoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E91386591DD1A70E001CE163 /* DaCapoTests.swift */,
+				E913865B1DD1A70E001CE163 /* Info.plist */,
+			);
+			path = DaCapoTests;
+			sourceTree = "<group>";
+		};
+		E91386631DD1A70E001CE163 /* DaCapoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E91386641DD1A70E001CE163 /* DaCapoUITests.swift */,
+				E91386661DD1A70E001CE163 /* Info.plist */,
+			);
+			path = DaCapoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E913863E1DD1A70E001CE163 /* DaCapo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E91386691DD1A70E001CE163 /* Build configuration list for PBXNativeTarget "DaCapo" */;
+			buildPhases = (
+				E913863B1DD1A70E001CE163 /* Sources */,
+				E913863C1DD1A70E001CE163 /* Frameworks */,
+				E913863D1DD1A70E001CE163 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaCapo;
+			productName = DaCapo;
+			productReference = E913863F1DD1A70E001CE163 /* DaCapo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E91386541DD1A70E001CE163 /* DaCapoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E913866C1DD1A70E001CE163 /* Build configuration list for PBXNativeTarget "DaCapoTests" */;
+			buildPhases = (
+				E91386511DD1A70E001CE163 /* Sources */,
+				E91386521DD1A70E001CE163 /* Frameworks */,
+				E91386531DD1A70E001CE163 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E91386571DD1A70E001CE163 /* PBXTargetDependency */,
+			);
+			name = DaCapoTests;
+			productName = DaCapoTests;
+			productReference = E91386551DD1A70E001CE163 /* DaCapoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E913865F1DD1A70E001CE163 /* DaCapoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E913866F1DD1A70E001CE163 /* Build configuration list for PBXNativeTarget "DaCapoUITests" */;
+			buildPhases = (
+				E913865C1DD1A70E001CE163 /* Sources */,
+				E913865D1DD1A70E001CE163 /* Frameworks */,
+				E913865E1DD1A70E001CE163 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E91386621DD1A70E001CE163 /* PBXTargetDependency */,
+			);
+			name = DaCapoUITests;
+			productName = DaCapoUITests;
+			productReference = E91386601DD1A70E001CE163 /* DaCapoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E91386371DD1A70E001CE163 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Thomas Segkoulis";
+				TargetAttributes = {
+					E913863E1DD1A70E001CE163 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					E91386541DD1A70E001CE163 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E913863E1DD1A70E001CE163;
+					};
+					E913865F1DD1A70E001CE163 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E913863E1DD1A70E001CE163;
+					};
+				};
+			};
+			buildConfigurationList = E913863A1DD1A70E001CE163 /* Build configuration list for PBXProject "DaCapo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E91386361DD1A70E001CE163;
+			productRefGroup = E91386401DD1A70E001CE163 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E913863E1DD1A70E001CE163 /* DaCapo */,
+				E91386541DD1A70E001CE163 /* DaCapoTests */,
+				E913865F1DD1A70E001CE163 /* DaCapoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E913863D1DD1A70E001CE163 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */,
+				E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */,
+				E913864A1DD1A70E001CE163 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91386531DD1A70E001CE163 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E913865E1DD1A70E001CE163 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E913863B1DD1A70E001CE163 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E91386471DD1A70E001CE163 /* SecondViewController.swift in Sources */,
+				E91386431DD1A70E001CE163 /* AppDelegate.swift in Sources */,
+				E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91386511DD1A70E001CE163 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E913865A1DD1A70E001CE163 /* DaCapoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E913865C1DD1A70E001CE163 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E91386651DD1A70E001CE163 /* DaCapoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E91386571DD1A70E001CE163 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E913863E1DD1A70E001CE163 /* DaCapo */;
+			targetProxy = E91386561DD1A70E001CE163 /* PBXContainerItemProxy */;
+		};
+		E91386621DD1A70E001CE163 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E913863E1DD1A70E001CE163 /* DaCapo */;
+			targetProxy = E91386611DD1A70E001CE163 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E91386481DD1A70E001CE163 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E91386491DD1A70E001CE163 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E913864E1DD1A70E001CE163 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E91386671DD1A70E001CE163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E91386681DD1A70E001CE163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E913866A1DD1A70E001CE163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DaCapo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E913866B1DD1A70E001CE163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DaCapo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E913866D1DD1A70E001CE163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DaCapoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaCapo.app/DaCapo";
+			};
+			name = Debug;
+		};
+		E913866E1DD1A70E001CE163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DaCapoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaCapo.app/DaCapo";
+			};
+			name = Release;
+		};
+		E91386701DD1A70E001CE163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DaCapoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DaCapo;
+			};
+			name = Debug;
+		};
+		E91386711DD1A70E001CE163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DaCapoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DaCapo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E913863A1DD1A70E001CE163 /* Build configuration list for PBXProject "DaCapo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E91386671DD1A70E001CE163 /* Debug */,
+				E91386681DD1A70E001CE163 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E91386691DD1A70E001CE163 /* Build configuration list for PBXNativeTarget "DaCapo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E913866A1DD1A70E001CE163 /* Debug */,
+				E913866B1DD1A70E001CE163 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E913866C1DD1A70E001CE163 /* Build configuration list for PBXNativeTarget "DaCapoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E913866D1DD1A70E001CE163 /* Debug */,
+				E913866E1DD1A70E001CE163 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E913866F1DD1A70E001CE163 /* Build configuration list for PBXNativeTarget "DaCapoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E91386701DD1A70E001CE163 /* Debug */,
+				E91386711DD1A70E001CE163 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E91386371DD1A70E001CE163 /* Project object */;
+}
