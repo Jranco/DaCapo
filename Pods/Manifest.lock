@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (4.0.1)
+  - ObjectMapper (2.2.0)
+  - Reusable (2.5.0):
+    - Reusable/Storyboard (= 2.5.0)
+    - Reusable/View (= 2.5.0)
+  - Reusable/Storyboard (2.5.0)
+  - Reusable/View (2.5.0)
+  - SwiftyJSON (3.1.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - ObjectMapper (~> 2.2)
+  - Reusable
+  - SwiftyJSON (~> 3.1.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  Reusable: 1775ede04719c488bb04e809d923cbb7214168b8
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+
+PODFILE CHECKSUM: 4a9ea4c8899f1994a93ce3ad58fbaa282e534979
+
+COCOAPODS: 1.1.1
