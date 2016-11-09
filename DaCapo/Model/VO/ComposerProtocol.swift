@@ -12,5 +12,6 @@ protocol ComposerProtocol
 {
     var id: String? {get}
     var name: String? {get}
+    var mainImage: UIImage? {get}
     var images: [AnyObject]? { set get }
 }

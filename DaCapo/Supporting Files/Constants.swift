@@ -16,10 +16,14 @@ struct Constants
         //        static let darkGreen  = UIColor.init(red: 51.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
     }
     
+    struct AsyncImageDownloader
+    {
+        static let MaxConcurrentImageDownloadOperationCount = 8 as Int
+    }
+    
     struct ComposerListView
     {
         static let ComposerListTableViewCellHeight          = 70 as CGFloat
-        static let MaxConcurrentImageDownloadOperationCount = 8 as Int
     }
     
     struct PopularComposersModel

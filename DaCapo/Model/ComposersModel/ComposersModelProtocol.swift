@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PopularComposersModelProtocol
+protocol ComposersModelProtocol
 {
     var composers: [ComposerVO]? {get}
     

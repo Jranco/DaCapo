@@ -15,8 +15,9 @@ class ComposerVO: ComposerProtocol, Mappable
 
     var id: String?
     var name: String?
+    var mainImage: UIImage?
     var images: [AnyObject]?
-    
+
     var mainImageURL: String?
     {
         get {

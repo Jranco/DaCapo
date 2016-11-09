@@ -24,8 +24,11 @@
 		E91AC44D1DD25F8E0087930E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AC44C1DD25F8E0087930E /* Constants.swift */; };
 		E91AC4511DD2629C0087930E /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AC4501DD2629C0087930E /* ServiceManager.swift */; };
 		E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AC4521DD264FB0087930E /* SpotifyServices.swift */; };
-		E92503BA1DD2FCE60028F8A6 /* PopularComposersModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92503B91DD2FCE60028F8A6 /* PopularComposersModelProtocol.swift */; };
 		E92503BC1DD2FEB80028F8A6 /* PopularComposersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92503BB1DD2FEB80028F8A6 /* PopularComposersModel.swift */; };
+		E9C464CF1DD3BE8700176381 /* ComposersModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C464CE1DD3BE8700176381 /* ComposersModelProtocol.swift */; };
+		E9C464D21DD3BF1100176381 /* ComposesrViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C464D11DD3BF1100176381 /* ComposesrViewModelProtocol.swift */; };
+		E9C464D51DD3DF0500176381 /* AsyncImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C464D41DD3DF0500176381 /* AsyncImageDownloader.swift */; };
+		E9C464D71DD3E56F00176381 /* ComposersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C464D61DD3E56F00176381 /* ComposersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +77,11 @@
 		E91AC44C1DD25F8E0087930E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E91AC4501DD2629C0087930E /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		E91AC4521DD264FB0087930E /* SpotifyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyServices.swift; sourceTree = "<group>"; };
-		E92503B91DD2FCE60028F8A6 /* PopularComposersModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularComposersModelProtocol.swift; sourceTree = "<group>"; };
 		E92503BB1DD2FEB80028F8A6 /* PopularComposersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularComposersModel.swift; sourceTree = "<group>"; };
+		E9C464CE1DD3BE8700176381 /* ComposersModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersModelProtocol.swift; sourceTree = "<group>"; };
+		E9C464D11DD3BF1100176381 /* ComposesrViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposesrViewModelProtocol.swift; sourceTree = "<group>"; };
+		E9C464D41DD3DF0500176381 /* AsyncImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageDownloader.swift; sourceTree = "<group>"; };
+		E9C464D61DD3E56F00176381 /* ComposersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersViewModel.swift; sourceTree = "<group>"; };
 		ED11F35F1DDC02D2D7879606 /* Pods_DaCapoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaCapoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +169,7 @@
 				E91386771DD1A997001CE163 /* Model */,
 				E913867A1DD1A9BD001CE163 /* Resources */,
 				E91AC44B1DD25F7D0087930E /* Supporting Files */,
+				E9C464D31DD3DEF400176381 /* Helpers */,
 				E91386441DD1A70E001CE163 /* FirstViewController.swift */,
 				E91386461DD1A70E001CE163 /* SecondViewController.swift */,
 				E91386481DD1A70E001CE163 /* Main.storyboard */,
@@ -222,6 +229,7 @@
 		E91386771DD1A997001CE163 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9C464CD1DD3BE8700176381 /* ComposersModel */,
 				E92503B71DD2FCB30028F8A6 /* PopularComposersModel */,
 				E92503B81DD2FCB30028F8A6 /* SearchComposersModel */,
 				E91386811DD1AC4A001CE163 /* VO */,
@@ -239,6 +247,7 @@
 		E91386791DD1A9A6001CE163 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E9C464D01DD3BF1100176381 /* ComposersViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -315,7 +324,6 @@
 		E92503B71DD2FCB30028F8A6 /* PopularComposersModel */ = {
 			isa = PBXGroup;
 			children = (
-				E92503B91DD2FCE60028F8A6 /* PopularComposersModelProtocol.swift */,
 				E92503BB1DD2FEB80028F8A6 /* PopularComposersModel.swift */,
 			);
 			path = PopularComposersModel;
@@ -326,6 +334,31 @@
 			children = (
 			);
 			path = SearchComposersModel;
+			sourceTree = "<group>";
+		};
+		E9C464CD1DD3BE8700176381 /* ComposersModel */ = {
+			isa = PBXGroup;
+			children = (
+				E9C464CE1DD3BE8700176381 /* ComposersModelProtocol.swift */,
+			);
+			path = ComposersModel;
+			sourceTree = "<group>";
+		};
+		E9C464D01DD3BF1100176381 /* ComposersViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E9C464D11DD3BF1100176381 /* ComposesrViewModelProtocol.swift */,
+				E9C464D61DD3E56F00176381 /* ComposersViewModel.swift */,
+			);
+			path = ComposersViewModel;
+			sourceTree = "<group>";
+		};
+		E9C464D31DD3DEF400176381 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E9C464D41DD3DF0500176381 /* AsyncImageDownloader.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,13 +643,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91386801DD1AA74001CE163 /* Coordinator.swift in Sources */,
+				E9C464D51DD3DF0500176381 /* AsyncImageDownloader.swift in Sources */,
 				E91AC4481DD2581B0087930E /* ComposerProtocol.swift in Sources */,
 				E91AC44A1DD25A440087930E /* ComposerVO.swift in Sources */,
+				E9C464CF1DD3BE8700176381 /* ComposersModelProtocol.swift in Sources */,
 				E91AC4511DD2629C0087930E /* ServiceManager.swift in Sources */,
+				E9C464D21DD3BF1100176381 /* ComposesrViewModelProtocol.swift in Sources */,
 				E91386741DD1A927001CE163 /* AppDelegate.swift in Sources */,
-				E92503BA1DD2FCE60028F8A6 /* PopularComposersModelProtocol.swift in Sources */,
 				E91AC44D1DD25F8E0087930E /* Constants.swift in Sources */,
 				E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */,
+				E9C464D71DD3E56F00176381 /* ComposersViewModel.swift in Sources */,
 				E91386471DD1A70E001CE163 /* SecondViewController.swift in Sources */,
 				E92503BC1DD2FEB80028F8A6 /* PopularComposersModel.swift in Sources */,
 				E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */,

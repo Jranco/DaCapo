@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import ObjectMapper
 
-class PopularComposersModel: PopularComposersModelProtocol
+class PopularComposersModel: ComposersModelProtocol
 {
     // MARK: - Services -
 
