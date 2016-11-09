@@ -10,7 +10,7 @@ import UIKit
 
 protocol ComposerProtocol
 {
-    var id: Int? {get}
+    var id: String? {get}
     var name: String? {get}
-    var image: UIImage? { get set }
+    var images: [AnyObject]? { set get }
 }

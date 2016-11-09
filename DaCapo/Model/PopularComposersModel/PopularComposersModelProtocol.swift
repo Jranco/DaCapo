@@ -12,10 +12,9 @@ protocol PopularComposersModelProtocol
 {
     var composers: [ComposerVO]? {get}
     
-    func reloadComposers(onSuccess: () -> Void, onFailure: (NSError) -> Void)
+    func reloadComposers(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)
 
-    func loadMoreComposers(onSuccess: (_ newComposer: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (NSError) -> Void)
+    func loadMoreComposers(onSuccess: @escaping (_ newComposer: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: @escaping (NSError) -> Void)
     
-    func loadComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: (_ newComposer: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (NSError) -> Void)
-
+    func loadComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ composers: [ComposerVO]) -> Void, onFailure: @escaping (NSError) -> Void)
 }

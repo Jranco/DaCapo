@@ -13,9 +13,20 @@ class ComposerVO: ComposerProtocol, Mappable
 {
     // MARK: - ComposerProtocol  -
 
-    var id: Int?
+    var id: String?
     var name: String?
-    var image: UIImage?
+    var images: [AnyObject]?
+    
+    var mainImageURL: String?
+    {
+        get {
+            
+            guard images != nil && (images?.count)! > 0 else { return nil }
+
+            let imageURL = images?.first?["url"]
+            return imageURL as! String?
+        }
+    }
     
     // MARK: - Mappable -
     
@@ -26,8 +37,8 @@ class ComposerVO: ComposerProtocol, Mappable
     
     func mapping(map: Map)
     {
-        id <- map["id"]
-        name <- map["name"]
-//        image <- map[]
+        id     <- map["id"]
+        name   <- map["name"]
+        images <- map["images"]
     }
 }

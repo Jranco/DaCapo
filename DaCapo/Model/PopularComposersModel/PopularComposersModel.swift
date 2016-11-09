@@ -20,29 +20,53 @@ class PopularComposersModel: PopularComposersModelProtocol
 
     var composers: [ComposerVO]?
     
-    func reloadComposers(onSuccess: () -> Void, onFailure: (NSError) -> Void)
+    func reloadComposers(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)
     {
-//        self.loadComposers(withOffset: 0,
-//                           withLimit: Constants.PopularComposersModel.PopularComposersDefaultBatchLimit,
-//                           onSuccess:
-//        {
-//            (<#NSInteger#>, <#NSInteger#>) in
-//            
-//            
-//        })
-//        {
-//            (<#NSError#>) in
-//            
-//            
-//        }
+        self.loadComposers(withOffset: 0,
+                            withLimit: Constants.PopularComposersModel.PopularComposersDefaultBatchLimit,
+                            onSuccess:
+            
+        {
+                            
+            (composers) in
+            
+            self.composers?.removeAll()
+            self.composers = composers
+            
+            onSuccess()
+        })
+        {
+            (error) in
+            
+            onFailure(error)
+        }
     }
     
-    func loadMoreComposers(onSuccess: (_ newComposer: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (NSError) -> Void)
+    func loadMoreComposers(onSuccess: @escaping (_ newComposer: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: @escaping (NSError) -> Void)
     {
-
+        let offset = composers?.count
+        
+        guard offset != nil && offset! > 0 else { return }
+        
+        self.loadComposers(withOffset: offset!,
+                            withLimit: Constants.PopularComposersModel.PopularComposersDefaultBatchLimit,
+                            onSuccess:
+            
+            {
+                
+                (composers) in
+                
+                self.composers?.append(contentsOf: composers)
+                onSuccess(offset!, composers.count)
+            })
+        {
+            (error) in
+            
+            onFailure(error)
+        }
     }
     
-    func loadComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: (_ newComposer: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (NSError) -> Void)
+    func loadComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ composers: [ComposerVO]) -> Void, onFailure: @escaping (NSError) -> Void)
     {
         services.popularComposers(withOffset: offset,
                                    withLimit: limit,
@@ -55,36 +79,25 @@ class PopularComposersModel: PopularComposersModelProtocol
                 let jsonObject  = try JSONSerialization.jsonObject(with: data) as! [String: AnyObject]
                 let jsonArtists = jsonObject["artists"]?["items"] as! NSArray
                 
-                for jsonArtist in jsonArtists
-                {
-//                    let composerVO = Mapper<ComposerVO>().map(jsonArtist as! JSON) as ComposerVO
-     
-                    let composerVO = Mapper<ComposerVO>().mapDictionary(JSONObject: jsonArtist) as ComposerVO
-                    
-                    print("composerVO: ", composerVO)
-
-                }
-            
+                 let composers = NSMutableArray()
                 
-                print("jsonArtists:", jsonArtists)
+                for jsonArtist in jsonArtists as! [[String:Any]]
+                {
+                    let composerVO = Mapper<ComposerVO>().map(JSON: jsonArtist)! as ComposerVO
+                    composers.add(composerVO)
+                }
+                
+                onSuccess(composers.copy() as! [ComposerVO])
+                
             } catch {
-                print("json error: \(error.localizedDescription)")
+                onFailure(error as NSError)
             }
-            
-//            let jsonObject       = JSON(data: data)
-//            let jsonArtists = jsonObject["artists"]["items"]
-//            
-//            for jsonArtist in jsonArtists.arrayObject!
-//            {
-////                let composerVO = Mapper<ComposerVO>().map(jsonArtist.) as ComposerVO
-// 
-//            }
-            
         })
         {
-            
+    
             (error) in
             
+            onFailure(error as NSError)
         }
     }
 }
