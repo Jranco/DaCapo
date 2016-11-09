@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import ObjectMapper
 
 class PopularComposersModel: PopularComposersModelProtocol
 {
@@ -47,9 +49,37 @@ class PopularComposersModel: PopularComposersModelProtocol
                                    onSuccess:
         {
                                     
-            (composers) in
-                                    
-                                    
+            (data) in
+            
+            do {
+                let jsonObject  = try JSONSerialization.jsonObject(with: data) as! [String: AnyObject]
+                let jsonArtists = jsonObject["artists"]?["items"] as! NSArray
+                
+                for jsonArtist in jsonArtists
+                {
+//                    let composerVO = Mapper<ComposerVO>().map(jsonArtist as! JSON) as ComposerVO
+     
+                    let composerVO = Mapper<ComposerVO>().mapDictionary(JSONObject: jsonArtist) as ComposerVO
+                    
+                    print("composerVO: ", composerVO)
+
+                }
+            
+                
+                print("jsonArtists:", jsonArtists)
+            } catch {
+                print("json error: \(error.localizedDescription)")
+            }
+            
+//            let jsonObject       = JSON(data: data)
+//            let jsonArtists = jsonObject["artists"]["items"]
+//            
+//            for jsonArtist in jsonArtists.arrayObject!
+//            {
+////                let composerVO = Mapper<ComposerVO>().map(jsonArtist.) as ComposerVO
+// 
+//            }
+            
         })
         {
             

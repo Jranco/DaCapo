@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 /**
  Spotify API routes
@@ -31,7 +30,7 @@ class SpotifyServices: NSObject
 {
 //    func searchComposer
     
-    func popularComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ composers: AnyObject) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
+    func popularComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
         artists(withPopularity: 100, forGenre: "Classical", withOffset: offset, withLimit: limit, onSuccess:
         {
@@ -46,7 +45,7 @@ class SpotifyServices: NSObject
         }
     }
     
-    func artists(withPopularity popularity: Int, forGenre genre: String, withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ artists: AnyObject) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
+    func artists(withPopularity popularity: Int, forGenre genre: String, withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
         let artistsUrl = self.urlArtists(withPopularity: 100,
                                                forGenre: "classical",
@@ -66,11 +65,10 @@ class SpotifyServices: NSObject
                 case .success( _):
                     
                     let retrievedData  = response.data
-                    let jsonObject     = JSON(data: retrievedData!)
                     
-                    guard jsonObject.dictionaryObject != nil else { return }
+                    guard retrievedData != nil else { return }
                     
-                    onSuccess(jsonObject.dictionaryObject as AnyObject)
+                    onSuccess(retrievedData!)
                     
                 case .failure( _):
                     
