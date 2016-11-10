@@ -156,9 +156,23 @@ class ComposersViewModel: ComposersViewModelProtocol
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func refreshUsers(onSuccess: () -> Void, onFailure: (_ error: NSError) -> Void)
+    func refreshUsers(onSuccess: @escaping () -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
+        self.suspendAllImageDownloadingOperations()
         
+        model?.reloadComposers(
+            onSuccess: {
+                
+                onSuccess()
+                
+            }, onFailure:
+            {
+                
+                (error) in
+                
+                onFailure(error)
+                
+        })
     }
     
     /**
@@ -168,9 +182,19 @@ class ComposersViewModel: ComposersViewModelProtocol
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func loadMoreComposers(onSuccess: (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (_ error: NSError) -> Void)
+    func loadMoreComposers(onSuccess: @escaping (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (_ error: NSError) -> Void)
     {
-        
+        model?.loadMoreComposers(onSuccess:
+        {
+            (newComposerAtIndex, numOfNewComposers) in
+            
+            onSuccess(newComposerAtIndex, numOfNewComposers)
+            
+        }, onFailure:
+        {
+            (error) in
+            
+        })
     }
     
     /**

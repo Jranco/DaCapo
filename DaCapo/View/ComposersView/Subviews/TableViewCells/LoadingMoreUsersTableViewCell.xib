@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LoadingMoreUsersTableViewCell" customModule="JRAGithubUsers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading more Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnS-tp-akd">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="170" id="g0Q-7a-kkI"/>
+                            <constraint firstAttribute="height" constant="21" id="kR0-sy-Ivw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="o2g-6U-A8c">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="NS7-uf-JAY"/>
+                            <constraint firstAttribute="width" constant="20" id="u5m-9B-g1E"/>
+                        </constraints>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GnS-tp-akd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="EA8-0Y-rXF"/>
+                    <constraint firstItem="GnS-tp-akd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LY2-86-iKQ"/>
+                    <constraint firstItem="o2g-6U-A8c" firstAttribute="centerY" secondItem="GnS-tp-akd" secondAttribute="centerY" id="Om6-CB-GpS"/>
+                    <constraint firstItem="o2g-6U-A8c" firstAttribute="leading" secondItem="GnS-tp-akd" secondAttribute="trailing" constant="8" id="ZZj-5p-Ois"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelLoadingMore" destination="GnS-tp-akd" id="OhQ-Z7-0Ts"/>
+                <outlet property="spinner" destination="o2g-6U-A8c" id="5Yd-16-ie0"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

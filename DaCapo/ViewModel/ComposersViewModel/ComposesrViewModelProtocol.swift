@@ -120,7 +120,7 @@ protocol ComposersViewModelProtocol
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func refreshUsers(onSuccess: () -> Void, onFailure: (_ error: NSError) -> Void)
+    func refreshUsers(onSuccess: @escaping () -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     
     /**
      Loades next batch of Composers and appends them in the existing Users pool.
@@ -129,7 +129,7 @@ protocol ComposersViewModelProtocol
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func loadMoreComposers(onSuccess: (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (_ error: NSError) -> Void)
+    func loadMoreComposers(onSuccess: @escaping (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (_ error: NSError) -> Void)
     
     /**
      Invoke this method from the View in order to present the Composer Details screen.
