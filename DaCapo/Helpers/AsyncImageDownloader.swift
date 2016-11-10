@@ -36,6 +36,14 @@ class ImageDownloader: Operation
             return
         }
         
+        if(self.composer.mainImageURL == nil)
+        {
+            
+        }
+        guard (self.composer.mainImageURL != nil) else {
+            return
+        }
+        
         let imageData = NSData(contentsOf: NSURL.init(string: self.composer.mainImageURL!)! as URL)
         
         if self.isCancelled
