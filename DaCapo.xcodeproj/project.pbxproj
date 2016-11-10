@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E46323708777D7E33789577 /* Pods_DaCapoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11F35F1DDC02D2D7879606 /* Pods_DaCapoTests.framework */; };
 		3E2637E1783769A4DA579745 /* Pods_DaCapoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635EA71FA6A2492618EE64D0 /* Pods_DaCapoUITests.framework */; };
+		90F4A5751DD49B1600F54A6A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */; };
+		90F4A5771DD49B2400F54A6A /* ComposersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */; };
 		92709BF6237D3BDC5A2B59F7 /* Pods_DaCapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D482513D4B8B11C546DBAD4 /* Pods_DaCapo.framework */; };
 		E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386441DD1A70E001CE163 /* FirstViewController.swift */; };
 		E91386471DD1A70E001CE163 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386461DD1A70E001CE163 /* SecondViewController.swift */; };
@@ -63,6 +65,8 @@
 		635EA71FA6A2492618EE64D0 /* Pods_DaCapoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaCapoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82FA3B968C585F0222E57F0A /* Pods-DaCapoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapoUITests/Pods-DaCapoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D482513D4B8B11C546DBAD4 /* Pods_DaCapo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaCapo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersCoordinator.swift; sourceTree = "<group>"; };
 		AA27D83EB7812AAE1E269EAF /* Pods-DaCapo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF7F624EACD40DAEC5691D3C /* Pods-DaCapo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.release.xcconfig"; sourceTree = "<group>"; };
 		E913863F1DD1A70E001CE163 /* DaCapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaCapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		90F4A5721DD49B0300F54A6A /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		90F4A5731DD49B0300F54A6A /* ComposersCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */,
+			);
+			path = ComposersCoordinator;
+			sourceTree = "<group>";
+		};
 		E91386361DD1A70E001CE163 = {
 			isa = PBXGroup;
 			children = (
@@ -225,10 +245,9 @@
 		E91386751DD1A952001CE163 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				E913867B1DD1AA33001CE163 /* AppCoordinator */,
-				E913867C1DD1AA33001CE163 /* ComposerListCoordinator */,
+				90F4A5721DD49B0300F54A6A /* AppCoordinator */,
+				90F4A5731DD49B0300F54A6A /* ComposersCoordinator */,
 				E913867D1DD1AA33001CE163 /* Protocol */,
-				E913867E1DD1AA33001CE163 /* TrackHistoryCoordinator */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -277,33 +296,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E913867B1DD1AA33001CE163 /* AppCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppCoordinator;
-			sourceTree = "<group>";
-		};
-		E913867C1DD1AA33001CE163 /* ComposerListCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ComposerListCoordinator;
-			sourceTree = "<group>";
-		};
 		E913867D1DD1AA33001CE163 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				E913867F1DD1AA74001CE163 /* Coordinator.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		E913867E1DD1AA33001CE163 /* TrackHistoryCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TrackHistoryCoordinator;
 			sourceTree = "<group>";
 		};
 		E91386811DD1AC4A001CE163 /* VO */ = {
@@ -729,6 +727,7 @@
 				E9C464D21DD3BF1100176381 /* ComposesrViewModelProtocol.swift in Sources */,
 				E94F54001DD3F8E800E24B88 /* UserImageView.swift in Sources */,
 				E91386741DD1A927001CE163 /* AppDelegate.swift in Sources */,
+				90F4A5751DD49B1600F54A6A /* AppCoordinator.swift in Sources */,
 				E91AC44D1DD25F8E0087930E /* Constants.swift in Sources */,
 				E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */,
 				E9C464D71DD3E56F00176381 /* ComposersViewModel.swift in Sources */,
@@ -736,6 +735,7 @@
 				E92503BC1DD2FEB80028F8A6 /* PopularComposersModel.swift in Sources */,
 				E94F53F11DD3F6EE00E24B88 /* ComposersTableViewController.swift in Sources */,
 				E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */,
+				90F4A5771DD49B2400F54A6A /* ComposersCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
