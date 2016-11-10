@@ -11,10 +11,8 @@
 		3E2637E1783769A4DA579745 /* Pods_DaCapoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635EA71FA6A2492618EE64D0 /* Pods_DaCapoUITests.framework */; };
 		90F4A5751DD49B1600F54A6A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */; };
 		90F4A5771DD49B2400F54A6A /* ComposersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */; };
+		90F4A5791DD49E1D00F54A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F4A5781DD49E1D00F54A6A /* Main.storyboard */; };
 		92709BF6237D3BDC5A2B59F7 /* Pods_DaCapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D482513D4B8B11C546DBAD4 /* Pods_DaCapo.framework */; };
-		E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386441DD1A70E001CE163 /* FirstViewController.swift */; };
-		E91386471DD1A70E001CE163 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386461DD1A70E001CE163 /* SecondViewController.swift */; };
-		E913864A1DD1A70E001CE163 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91386481DD1A70E001CE163 /* Main.storyboard */; };
 		E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E913864B1DD1A70E001CE163 /* Assets.xcassets */; };
 		E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */; };
 		E913865A1DD1A70E001CE163 /* DaCapoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386591DD1A70E001CE163 /* DaCapoTests.swift */; };
@@ -67,12 +65,10 @@
 		8D482513D4B8B11C546DBAD4 /* Pods_DaCapo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaCapo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersCoordinator.swift; sourceTree = "<group>"; };
+		90F4A5781DD49E1D00F54A6A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AA27D83EB7812AAE1E269EAF /* Pods-DaCapo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF7F624EACD40DAEC5691D3C /* Pods-DaCapo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.release.xcconfig"; sourceTree = "<group>"; };
 		E913863F1DD1A70E001CE163 /* DaCapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaCapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E91386441DD1A70E001CE163 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E91386461DD1A70E001CE163 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		E91386491DD1A70E001CE163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E913864B1DD1A70E001CE163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E913864E1DD1A70E001CE163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91386501DD1A70E001CE163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,12 +202,10 @@
 				E913867A1DD1A9BD001CE163 /* Resources */,
 				E91AC44B1DD25F7D0087930E /* Supporting Files */,
 				E9C464D31DD3DEF400176381 /* Helpers */,
-				E91386441DD1A70E001CE163 /* FirstViewController.swift */,
-				E91386461DD1A70E001CE163 /* SecondViewController.swift */,
-				E91386481DD1A70E001CE163 /* Main.storyboard */,
 				E913864B1DD1A70E001CE163 /* Assets.xcassets */,
 				E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */,
 				E91386501DD1A70E001CE163 /* Info.plist */,
+				90F4A5781DD49E1D00F54A6A /* Main.storyboard */,
 			);
 			path = DaCapo;
 			sourceTree = "<group>";
@@ -550,9 +544,9 @@
 				E94F53FB1DD3F80700E24B88 /* LoadingMoreUsersTableViewCell.xib in Resources */,
 				E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */,
 				E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */,
+				90F4A5791DD49E1D00F54A6A /* Main.storyboard in Resources */,
 				E94F53F31DD3F71700E24B88 /* Composers.storyboard in Resources */,
 				E94F53F91DD3F80700E24B88 /* ComposersTableViewCell.xib in Resources */,
-				E913864A1DD1A70E001CE163 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,10 +725,8 @@
 				E91AC44D1DD25F8E0087930E /* Constants.swift in Sources */,
 				E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */,
 				E9C464D71DD3E56F00176381 /* ComposersViewModel.swift in Sources */,
-				E91386471DD1A70E001CE163 /* SecondViewController.swift in Sources */,
 				E92503BC1DD2FEB80028F8A6 /* PopularComposersModel.swift in Sources */,
 				E94F53F11DD3F6EE00E24B88 /* ComposersTableViewController.swift in Sources */,
-				E91386451DD1A70E001CE163 /* FirstViewController.swift in Sources */,
 				90F4A5771DD49B2400F54A6A /* ComposersCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,14 +763,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E91386481DD1A70E001CE163 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E91386491DD1A70E001CE163 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
