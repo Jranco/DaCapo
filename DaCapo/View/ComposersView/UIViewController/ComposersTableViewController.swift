@@ -10,6 +10,15 @@ import UIKit
 
 class ComposersTableViewController: UITableViewController
 {
+    // MARK: - Properties - 
+    
+    var searchDelayer: Timer?
+    
+    // MARK: - UISearchController -
+    
+    let searchController = UISearchController.init(searchResultsController: nil)
+
+    
     // MARK: - ViewModel -
     
     var viewModel: ComposersViewModel?
@@ -31,6 +40,11 @@ class ComposersTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        searchController.searchResultsUpdater             = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext                        = true
+        tableView.tableHeaderView                         = searchController.searchBar
         
         self.tableView.registerReusableCell(ComposersTableViewCell.self)
         self.tableView.registerReusableCell(LoadingMoreUsersTableViewCell.self)
@@ -203,6 +217,13 @@ class ComposersTableViewController: UITableViewController
         viewModel?.resumeAllImageDownloadingOperations()
     }
     
+    // MARK: - Search Composers -
+    
+    func searchComposers()
+    {
+        print("searching for composers")
+    }
+    
 }
 
 // MARK: - UserListViewModelViewDelegate -
@@ -215,5 +236,26 @@ extension ComposersTableViewController: ComposersViewModelViewDelegate
         {
             self.tableView.reloadRows(at: [indexPath as IndexPath], with: .none)
         }
+    }
+}
+
+// MARK: - UISearchBarDelegate -
+
+extension ComposersTableViewController: UISearchBarDelegate
+{
+    
+}
+
+extension ComposersTableViewController: UISearchResultsUpdating
+{
+    func updateSearchResults(for searchController: UISearchController)
+    {
+        searchDelayer?.invalidate()
+        
+        searchDelayer = Timer.scheduledTimer(timeInterval: 0.5,
+                                                   target: self,
+                                                 selector: #selector(searchComposers),
+                                                 userInfo: nil,
+                                                  repeats: false)
     }
 }
