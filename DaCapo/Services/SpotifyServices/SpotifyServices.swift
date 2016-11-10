@@ -32,7 +32,7 @@ class SpotifyServices: NSObject
     
     func popularComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
-        artists(withPopularity: 100, forGenre: "Classical", withOffset: offset, withLimit: limit, onSuccess:
+        artists(withPopularity: 100, forArtist: "\"\"", forGenre: "Classical", withOffset: offset, withLimit: limit, onSuccess:
         {
             (response) in
             
@@ -45,9 +45,25 @@ class SpotifyServices: NSObject
         }
     }
     
-    func artists(withPopularity popularity: Int, forGenre genre: String, withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
+    func searchComposers(withName name: String, withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
+    {
+        artists(withPopularity: 100, forArtist: name, forGenre: "Classical", withOffset: offset, withLimit: limit, onSuccess:
+            {
+                (response) in
+                
+                onSuccess(response)
+            })
+        {
+            (error) in
+            
+            onFailure(error)
+        }
+    }
+    
+    func artists(withPopularity popularity: Int, forArtist artist:String, forGenre genre: String, withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
         let artistsUrl = self.urlArtists(withPopularity: 100,
+                                              forArtist: artist,
                                                forGenre: "classical",
                                              withOffset: offset,
                                               withLimit: limit)
@@ -80,12 +96,12 @@ class SpotifyServices: NSObject
     
     // MARK: - URL builder -
     
-    func urlArtists(withPopularity popularity: Int, forGenre genre: String, withOffset offset: Int, withLimit limit: Int) -> URL
+    func urlArtists(withPopularity popularity: Int, forArtist artist:String, forGenre genre: String, withOffset offset: Int, withLimit limit: Int) -> URL
     {
         let urlComponents = self.urlComponent(forRoute: SpotifyAPIRoute.search)
 
         let popularity = NSURLQueryItem(name: "popularity", value: String(format: "%d", popularity))
-        let q          = NSURLQueryItem(name: "q", value: String(format: "genre:%@", genre))
+        let q          = NSURLQueryItem(name: "q", value: String(format: "artist:%@ genre:%@", artist, genre))
         let type       = NSURLQueryItem(name: "type", value: SpotifyQueryParamType.artist.rawValue)
         let offset     = NSURLQueryItem(name: "offset", value: String(format: "%d", offset))
         let limit      = NSURLQueryItem(name: "limit", value: String(format: "%d", limit))

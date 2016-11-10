@@ -10,6 +10,7 @@ import Foundation
 
 protocol ComposersModelProtocol
 {
+    var composerName: String? {get set}
     var composers: [ComposerVO]? {get}
     
     func reloadComposers(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)

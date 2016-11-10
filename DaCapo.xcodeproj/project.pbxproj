@@ -12,6 +12,8 @@
 		90F4A5751DD49B1600F54A6A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */; };
 		90F4A5771DD49B2400F54A6A /* ComposersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */; };
 		90F4A5791DD49E1D00F54A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F4A5781DD49E1D00F54A6A /* Main.storyboard */; };
+		90F4A57B1DD49F5D00F54A6A /* ComposersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A57A1DD49F5D00F54A6A /* ComposersModel.swift */; };
+		90F4A57D1DD4A02E00F54A6A /* SearchComposersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A57C1DD4A02E00F54A6A /* SearchComposersModel.swift */; };
 		92709BF6237D3BDC5A2B59F7 /* Pods_DaCapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D482513D4B8B11C546DBAD4 /* Pods_DaCapo.framework */; };
 		E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E913864B1DD1A70E001CE163 /* Assets.xcassets */; };
 		E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */; };
@@ -66,6 +68,8 @@
 		90F4A5741DD49B1600F54A6A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		90F4A5761DD49B2400F54A6A /* ComposersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersCoordinator.swift; sourceTree = "<group>"; };
 		90F4A5781DD49E1D00F54A6A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		90F4A57A1DD49F5D00F54A6A /* ComposersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersModel.swift; sourceTree = "<group>"; };
+		90F4A57C1DD4A02E00F54A6A /* SearchComposersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchComposersModel.swift; path = DaCapo/Model/ComposersModel/SearchComposersModel.swift; sourceTree = SOURCE_ROOT; };
 		AA27D83EB7812AAE1E269EAF /* Pods-DaCapo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF7F624EACD40DAEC5691D3C /* Pods-DaCapo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.release.xcconfig"; sourceTree = "<group>"; };
 		E913863F1DD1A70E001CE163 /* DaCapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaCapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,6 +346,7 @@
 		E92503B81DD2FCB30028F8A6 /* SearchComposersModel */ = {
 			isa = PBXGroup;
 			children = (
+				90F4A57C1DD4A02E00F54A6A /* SearchComposersModel.swift */,
 			);
 			path = SearchComposersModel;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C464CE1DD3BE8700176381 /* ComposersModelProtocol.swift */,
+				90F4A57A1DD49F5D00F54A6A /* ComposersModel.swift */,
 			);
 			path = ComposersModel;
 			sourceTree = "<group>";
@@ -724,6 +730,8 @@
 				90F4A5751DD49B1600F54A6A /* AppCoordinator.swift in Sources */,
 				E91AC44D1DD25F8E0087930E /* Constants.swift in Sources */,
 				E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */,
+				90F4A57B1DD49F5D00F54A6A /* ComposersModel.swift in Sources */,
+				90F4A57D1DD4A02E00F54A6A /* SearchComposersModel.swift in Sources */,
 				E9C464D71DD3E56F00176381 /* ComposersViewModel.swift in Sources */,
 				E92503BC1DD2FEB80028F8A6 /* PopularComposersModel.swift in Sources */,
 				E94F53F11DD3F6EE00E24B88 /* ComposersTableViewController.swift in Sources */,
