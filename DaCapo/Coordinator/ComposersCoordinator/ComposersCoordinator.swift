@@ -12,15 +12,17 @@ class ComposersCoordinator: Coordinator
 {
     var window: UIWindow
     var navigationController: UINavigationController
+    var containerViewController: UIViewController
 
     init(window: UIWindow)
     {
         self.window = window
-        navigationController = UINavigationController.init()
+        navigationController    = UINavigationController.init()
+        containerViewController = UIViewController.init()
     }
     
     func start()
-    {    
+    {
         let storyboard = UIStoryboard(name: "Composers", bundle: nil)
         
         guard let composersTableViewController = (storyboard.instantiateViewController(withIdentifier: "ComposersTableViewController") as? ComposersTableViewController) else { return }
@@ -28,13 +30,16 @@ class ComposersCoordinator: Coordinator
         let viewModel   = ComposersViewModel()
         viewModel.model = PopularComposersModel()
         viewModel.popularComposersModel = viewModel.model as! PopularComposersModel
-//        viewModel.model = SearchComposersModel()
-//        viewModel.model?.composerName = "Bach"
-        
         viewModel.coordinatorDelegate = self
+        
         composersTableViewController.viewModel = viewModel
+        
         navigationController.setViewControllers([composersTableViewController], animated: true)
-        window.rootViewController = navigationController
+        containerViewController.addChildViewController(navigationController)
+        containerViewController.view.addSubview(navigationController.view)
+        navigationController.view.bounds = containerViewController.view.bounds
+        navigationController.didMove(toParentViewController: containerViewController)
+        window.rootViewController = containerViewController
     }
 }
 
