@@ -84,7 +84,7 @@ protocol ComposersViewModelProtocol
      The 'didLoadAllComposers' variable is a boolean that has value of 'true' if all Composers are fetched from the API, otherwise has 'false'.
      
      */
-    var didLoadAllComposers: Bool { get }
+    func didLoadAllComposers() -> Bool
     
     /**
      The 'composerAtIndexPath' function fetches and returns a requested Composer's data.
@@ -130,6 +130,10 @@ protocol ComposersViewModelProtocol
      
      */
     func loadMoreComposers(onSuccess: @escaping (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: (_ error: NSError) -> Void)
+    
+    func searchComposers(withName name: String)
+    
+    func cancelSearchComposers()
     
     /**
      Invoke this method from the View in order to present the Composer Details screen.

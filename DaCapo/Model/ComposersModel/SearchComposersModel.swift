@@ -30,6 +30,8 @@ class SearchComposersModel: ComposersModel
                     let jsonObject  = try JSONSerialization.jsonObject(with: data) as! [String: AnyObject]
                     let jsonArtists = jsonObject["artists"]?["items"] as! NSArray
 
+                    self.composersTotal = jsonObject["artists"]?["total"] as! Int?
+
                     let composers = NSMutableArray()
 
                     for jsonArtist in jsonArtists as! [[String:Any]]

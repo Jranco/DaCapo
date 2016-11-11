@@ -12,6 +12,7 @@ protocol ComposersModelProtocol
 {
     var composerName: String? {get set}
     var composers: [ComposerVO]? {get}
+    var composersTotal: Int? {get set}
     
     func reloadComposers(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)
 

@@ -27,6 +27,7 @@ class ComposersCoordinator: Coordinator
         
         let viewModel   = ComposersViewModel()
         viewModel.model = PopularComposersModel()
+        viewModel.popularComposersModel = viewModel.model as! PopularComposersModel
 //        viewModel.model = SearchComposersModel()
 //        viewModel.model?.composerName = "Bach"
         

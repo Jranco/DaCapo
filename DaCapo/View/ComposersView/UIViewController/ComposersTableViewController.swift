@@ -42,6 +42,7 @@ class ComposersTableViewController: UITableViewController
         super.viewDidLoad()
         
         searchController.searchResultsUpdater             = self
+        searchController.searchBar.delegate               = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext                        = true
         tableView.tableHeaderView                         = searchController.searchBar
@@ -78,7 +79,7 @@ class ComposersTableViewController: UITableViewController
             // Should be moved to ViewDidLoad, but there is a problem with the table offset
             refreshControl = UIRefreshControl()
             refreshControl!.attributedTitle = NSAttributedString(string: NSLocalizedString("kPullToRefresh", comment: ""))
-//            refreshControl!.addTarget(self, action: #selector(ComposersTableViewController.refreshUserList(_:)), for: UIControlEvents.ValueChanged)
+            refreshControl!.addTarget(self, action: #selector(refreshUserList), for: UIControlEvents.valueChanged)
         }
     }
 
@@ -183,7 +184,7 @@ class ComposersTableViewController: UITableViewController
         self.viewModel?.refreshUsers(
             onSuccess: {
                 self.tableView.reloadData()
-//                self.refreshControl!.endRefreshing()
+                self.refreshControl!.endRefreshing()
                 self.tableView.isUserInteractionEnabled = true
                 
             }, onFailure:
@@ -222,6 +223,12 @@ class ComposersTableViewController: UITableViewController
     func searchComposers()
     {
         print("searching for composers")
+        
+        guard (searchController.isActive) &&  (searchController.searchBar.text != nil) else { return }
+        
+        viewModel?.searchComposers(withName: searchController.searchBar.text!)
+        
+        self.refreshUserList(sender: self)
     }
     
 }
@@ -243,7 +250,15 @@ extension ComposersTableViewController: ComposersViewModelViewDelegate
 
 extension ComposersTableViewController: UISearchBarDelegate
 {
-    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchDelayer?.invalidate()
+
+        viewModel?.cancelSearchComposers()
+        
+        tableView.reloadData()
+//        self.refreshUserList(sender: self)
+    }
 }
 
 extension ComposersTableViewController: UISearchResultsUpdating

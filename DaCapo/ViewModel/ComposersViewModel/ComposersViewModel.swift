@@ -28,6 +28,9 @@ class ComposersViewModel: ComposersViewModelProtocol
      */
     var model: ComposersModelProtocol?
     
+    var popularComposersModel = PopularComposersModel()
+    var searchComposersModel  = SearchComposersModel()
+
     /**
      A delegate object which conforms to ComposersViewModelCoordinatorDelegate protocol in order to trigger navigation after interaction with View.
      
@@ -59,7 +62,7 @@ class ComposersViewModel: ComposersViewModelProtocol
         
         var composersCountTotal = (model?.composers?.count)!
         
-        if(didLoadAllComposers == false)
+        if(didLoadAllComposers() == false)
         {
             composersCountTotal = composersCountTotal + 1
         }
@@ -79,15 +82,16 @@ class ComposersViewModel: ComposersViewModelProtocol
      The 'didLoadAllComposers' variable is a boolean that has value of 'true' if all Composers are fetched from the API, otherwise has 'false'.
      
      */
-    var didLoadAllComposers = false  {
-        
-        didSet {
-            
-            if (didLoadAllComposers == true)
-            {
-                // TODO: Implement callback to update View
-            }
+    func didLoadAllComposers() -> Bool
+    {
+
+        if(model?.composersTotal == model?.composers?.count)
+        {
+            return true;
         }
+    
+        return false;
+        
     }
     
     /**
@@ -114,7 +118,7 @@ class ComposersViewModel: ComposersViewModelProtocol
     //TODO:
     func typeOfCellAtIndexPath(indexPath: NSIndexPath) -> UserListCellType
     {
-        if(didLoadAllComposers == true)
+        if(didLoadAllComposers() == true)
         {
             return UserListCellType.Composer
         }
@@ -195,6 +199,19 @@ class ComposersViewModel: ComposersViewModelProtocol
             (error) in
             
         })
+    }
+    
+    func searchComposers(withName name: String)
+    {
+        model = SearchComposersModel()
+        model?.composerName = name
+    }
+    
+    func cancelSearchComposers()
+    {
+        
+        model = popularComposersModel
+        
     }
     
     /**

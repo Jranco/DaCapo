@@ -11,6 +11,7 @@ import UIKit
 class ComposersModel: ComposersModelProtocol
 {
     var composerName: String? = ""
+    var composersTotal: Int? = 0
 
     // MARK: - PopularComposersModelProtocol -
     
