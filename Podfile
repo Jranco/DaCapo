@@ -12,6 +12,7 @@ target 'DaCapo' do
   pod 'Alamofire', '~> 4.0'
   pod 'ObjectMapper', '~> 2.2'
   pod 'SwiftyJSON', '~> 3.1.1'
+  pod 'youtube-ios-player-helper'
   pod 'Reusable'
 
   # Pods for DaCapo

@@ -303,6 +303,7 @@
 		E91386781DD1A997001CE163 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E937E8241DD75A420010149F /* YTPlayerView */,
 				E94F53FC1DD3F8E800E24B88 /* Common */,
 				E94F53EB1DD3F67B00E24B88 /* ComposersView */,
 				E937E8141DD6F7930010149F /* ComposerTracks */,
@@ -470,6 +471,13 @@
 			path = ComposerTracksCoordinator;
 			sourceTree = "<group>";
 		};
+		E937E8241DD75A420010149F /* YTPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YTPlayerView;
+			sourceTree = "<group>";
+		};
 		E94F53EB1DD3F67B00E24B88 /* ComposersView */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +636,7 @@
 					E913863E1DD1A70E001CE163 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HUBMAYY26V;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					E91386541DD1A70E001CE163 = {
@@ -1013,12 +1022,15 @@
 			baseConfigurationReference = AA27D83EB7812AAE1E269EAF /* Pods-DaCapo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HUBMAYY26V;
 				INFOPLIST_FILE = DaCapo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DaCapo/View/YTPlayerView/DaCapo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1028,12 +1040,14 @@
 			baseConfigurationReference = AF7F624EACD40DAEC5691D3C /* Pods-DaCapo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HUBMAYY26V;
 				INFOPLIST_FILE = DaCapo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JrancoMobile.DaCapo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DaCapo/View/YTPlayerView/DaCapo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

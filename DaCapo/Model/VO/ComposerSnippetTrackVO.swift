@@ -46,7 +46,7 @@ class ComposerSnippetTrackVO: ComposerSnippetTrackProtocol, ImageDownloadProtoco
         channelId            <- map["snippet.channelId"]
         title                <- map["snippet.title"]
         description          <- map["snippet.description"]
-        mainImageURL            <- map["snippet.thumbnails.high.url"]
+        mainImageURL         <- map["snippet.thumbnails.high.url"]
         channelTitle         <- map["snippet.channelTitle"]
         liveBroadcastContent <- map["snippet.liveBroadcastContent"]
     }
