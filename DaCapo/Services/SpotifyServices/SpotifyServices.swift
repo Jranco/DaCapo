@@ -28,8 +28,6 @@ enum SpotifyQueryParamType : String {
 
 class SpotifyServices: NSObject
 {
-//    func searchComposer
-    
     func popularComposers(withOffset offset: Int, withLimit limit: Int, onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
         artists(withPopularity: 100, forArtist: "\"\"", forGenre: "Classical", withOffset: offset, withLimit: limit, onSuccess:

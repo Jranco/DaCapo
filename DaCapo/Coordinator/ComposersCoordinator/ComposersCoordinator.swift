@@ -47,6 +47,9 @@ extension ComposersCoordinator: ComposersViewModelCoordinatorDelegate
 {
     func showComposerDetails(composer: ComposerVO)
     {
+        let composerTracksCoordinator = ComposerTracksCoordinator.init(window: window, navigationController: navigationController, containerViewController: containerViewController)
+        composerTracksCoordinator.composerVO = composer
         
+        composerTracksCoordinator.start()
     }
 }

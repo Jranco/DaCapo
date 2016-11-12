@@ -22,11 +22,11 @@ class PendingOperations
 
 class ImageDownloader: Operation
 {
-    let composer: ComposerVO
+    var imageDownloadObj: ImageDownloadProtocol
     
-    init(composer: ComposerVO)
+    init(composer: ImageDownloadProtocol)
     {
-        self.composer = composer
+        self.imageDownloadObj = composer
     }
     
     override func main()
@@ -36,23 +36,23 @@ class ImageDownloader: Operation
             return
         }
         
-        if(self.composer.mainImageURL == nil)
+        if(self.imageDownloadObj.mainImageURL == nil)
         {
             
         }
-        guard (self.composer.mainImageURL != nil) else {
+        guard (self.imageDownloadObj.mainImageURL != nil) else {
             return
         }
         
-        let imageData = NSData(contentsOf: NSURL.init(string: self.composer.mainImageURL!)! as URL)
+        let imageData = NSData(contentsOf: NSURL.init(string: self.imageDownloadObj.mainImageURL!)! as URL)
         
         if self.isCancelled
         {
             return
         }
         
-        if (imageData?.length)! > 0 {
-            self.composer.mainImage = UIImage(data:imageData! as Data)
+        if (imageData != nil) && (imageData?.length)! > 0 {
+            self.imageDownloadObj.mainImage = UIImage(data:imageData! as Data)
         }
     }
 }

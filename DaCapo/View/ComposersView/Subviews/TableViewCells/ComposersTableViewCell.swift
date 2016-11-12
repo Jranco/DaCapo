@@ -52,14 +52,13 @@ class ComposersTableViewCell: UITableViewCell, NibReusable
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        // Initialization code
+
+//        composerImageView.setRoundedCorners()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

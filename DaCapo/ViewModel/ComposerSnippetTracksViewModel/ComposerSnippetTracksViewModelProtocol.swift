@@ -1,8 +1,8 @@
 //
-//  ComposerViewModelProtocol.swift
+//  ComposerSnippetTracksViewModelProtocol.swift
 //  DaCapo
 //
-//  Created by Thomas Segkoulis on 09/11/16.
+//  Created by Thomas Segkoulis on 12/11/16.
 //  Copyright © 2016 Thomas Segkoulis. All rights reserved.
 //
 
@@ -13,22 +13,22 @@ import UIKit
  View delegate
  
  */
-protocol ComposersViewModelViewDelegate: class
+protocol ComposerSnippetTracksViewModelViewDelegate: class
 {
     /**
-     This method is invonked in the delegate object conforming to ComposersViewModelViewDelegate protocol, in order to notify the View
+     This method is invonked in the delegate object conforming to ComposerSnippetTracksViewModelViewDelegate protocol, in order to notify the View
      that the image for Composer at indexPath: indexPath is loaded. Then the View can refresh Composers's cell at that given indexPath.
      
      @param imagePath
      */
-    func didLoadComposerImageAtIndex(indexPath: NSIndexPath)
+    func didLoadComposerSnippetTrackImageAtIndex(indexPath: NSIndexPath)
 }
 
 /**
  Coordinator delegate
  
  */
-protocol ComposersViewModelCoordinatorDelegate
+protocol ComposerSnippetTracksViewModelCoordinatorDelegate
 {
     /**
      This method invokes a new navigation performed by the conforming to this protocol object, presenting the 'User details' screen.
@@ -39,28 +39,28 @@ protocol ComposersViewModelCoordinatorDelegate
 }
 
 /**
- ComposersViewModelProtocol
+ ComposerSnippetTracksViewModelProtocol
  
  */
-protocol ComposersViewModelProtocol
+protocol ComposerSnippetTracksViewModelProtocol
 {
     /**
      Model
      
      */
-    var model: ComposersModelProtocol? { get set }
+    var model: ComposerSnippetTracksModel? { get set }
     
     /**
      A delegate object which conforms to ComposersViewModelCoordinatorDelegate protocol in order to trigger navigation after interaction with View.
      
      */
-    var coordinatorDelegate: ComposersViewModelCoordinatorDelegate? { get set }
+    var coordinatorDelegate: ComposerSnippetTracksViewModelCoordinatorDelegate? { get set }
     
     /**
      A delegate object which conforms to ComposersViewModelViewDelegate protocol in order to update View after Model updates.
      
      */
-    var viewDelegate: ComposersViewModelViewDelegate? { get set }
+    var viewDelegate: ComposerSnippetTracksViewModelViewDelegate? { get set }
     
     /**
      Screen title
@@ -72,7 +72,7 @@ protocol ComposersViewModelProtocol
      The 'composersCount' variable contains the cardinality of current loaded Users in the Model.
      
      */
-    var composersCount: Int { get }
+    var composerSnippetTracksCount: Int { get }
     
     /**
      The 'pendingOperations' variable is an instance of 'PendingOperations' class and holds information regarding download progress of Composers' images.
@@ -84,7 +84,7 @@ protocol ComposersViewModelProtocol
      The 'didLoadAllComposers' variable is a boolean that has value of 'true' if all Composers are fetched from the API, otherwise has 'false'.
      
      */
-    func didLoadAllComposers() -> Bool
+    func didLoadAllComposerSnippetTracks() -> Bool
     
     /**
      The 'composerAtIndexPath' function fetches and returns a requested Composer's data.
@@ -93,7 +93,7 @@ protocol ComposersViewModelProtocol
      @return ComposerVO object, which is the actual Composer data.
      
      */
-    func composerAtIndexPath(indexPath: NSIndexPath) -> ComposerVO?
+    func composerSnippetTracksAtIndexPath(indexPath: NSIndexPath) -> ComposerSnippetTrackVO?
     
     /**
      Returns type of cell, given the indexPath.
@@ -111,7 +111,7 @@ protocol ComposersViewModelProtocol
      @return true if user list is empty, false otherwise
      
      */
-    func composerListIsEmpty() -> Bool
+    func composerSnippetTracksListIsEmpty() -> Bool
     
     /**
      Refreshes Composer pool.
@@ -129,11 +129,7 @@ protocol ComposersViewModelProtocol
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func loadMoreComposers(onSuccess: @escaping (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
-    
-    func searchComposers(withName name: String)
-    
-    func cancelSearchComposers()
+    func loadMoreComposerSnippetTracks(onSuccess: @escaping (_ newComposerSnippetTrackAtIndex: NSInteger, _ numOfNewComposerSnippetTracks: NSInteger) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     
     /**
      Invoke this method from the View in order to present the Composer Details screen.
@@ -141,7 +137,7 @@ protocol ComposersViewModelProtocol
      @param indexPath Indexpath of selected Composer.
      
      */
-    func showUserDetailsForComposerAtIndex(indexPath: NSIndexPath)
+    func playTrackAtIndex(indexPath: NSIndexPath)
     
     /**
      Starts async download of Composer's image for the given indexPath.
@@ -149,7 +145,7 @@ protocol ComposersViewModelProtocol
      @param indexPath Indexpath of Composer
      
      */
-    func startDownloadImageForComposerAtIndexPath(indexPath: NSIndexPath)
+    func startDownloadImageForComposerSnippetTrackAtIndexPath(indexPath: NSIndexPath)
     
     /**
      Starts async download of Composer's images for the given indexPaths of visible rows.

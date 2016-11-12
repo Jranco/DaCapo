@@ -52,6 +52,11 @@ class ComposersTableViewController: UITableViewController
         
         tableView.tableFooterView = UIView()
         
+        // Should be moved to ViewDidLoad, but there is a problem with the table offset
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: NSLocalizedString("kPullToRefresh", comment: ""))
+        refreshControl!.addTarget(self, action: #selector(refreshUserList), for: UIControlEvents.valueChanged)
+        
         self.viewModel?.title(
             completionBlock: {
                 (title) in
@@ -74,13 +79,9 @@ class ComposersTableViewController: UITableViewController
     {
         super.viewDidAppear(animated)
         
-        if(refreshControl == nil)
-        {
-            // Should be moved to ViewDidLoad, but there is a problem with the table offset
-            refreshControl = UIRefreshControl()
-            refreshControl!.attributedTitle = NSAttributedString(string: NSLocalizedString("kPullToRefresh", comment: ""))
-            refreshControl!.addTarget(self, action: #selector(refreshUserList), for: UIControlEvents.valueChanged)
-        }
+        tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        tableView.setNeedsUpdateConstraints()
+        tableView.setNeedsLayout()
     }
 
     override func didReceiveMemoryWarning()
@@ -167,7 +168,7 @@ class ComposersTableViewController: UITableViewController
     {
 //        guard tableView.cellForRowAtIndexPath(indexPath)?.isKindOfClass(ComposersTableViewCell) == true else { return }
 //
-//        self.viewModel?.showComposerDetailsForComposerAtIndex(indexPath: indexPath)
+        self.viewModel?.showUserDetailsForComposerAtIndex(indexPath: indexPath as NSIndexPath)
     }
     
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath)

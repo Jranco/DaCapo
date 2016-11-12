@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Composer Tracks View Controller-->
+        <scene sceneID="qa7-Uv-1Kf">
+            <objects>
+                <viewController storyboardIdentifier="ComposerTracksViewController" id="DBf-o9-UeR" customClass="ComposerTracksViewController" customModule="DaCapo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FQz-EG-izb"/>
+                        <viewControllerLayoutGuide type="bottom" id="fcN-P5-U9e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lcT-Ok-MDK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-TJ-AAe" userLabel="ViewHeader">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGH-rL-ud9">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kVS-TJ-AAe" firstAttribute="leading" secondItem="lcT-Ok-MDK" secondAttribute="leading" id="3kL-a2-5bG"/>
+                            <constraint firstItem="mGH-rL-ud9" firstAttribute="top" secondItem="kVS-TJ-AAe" secondAttribute="bottom" id="4Oq-oH-kZy"/>
+                            <constraint firstItem="fcN-P5-U9e" firstAttribute="top" secondItem="mGH-rL-ud9" secondAttribute="bottom" id="Drn-dV-lk5"/>
+                            <constraint firstAttribute="trailing" secondItem="kVS-TJ-AAe" secondAttribute="trailing" id="OYQ-H6-rOS"/>
+                            <constraint firstAttribute="trailing" secondItem="mGH-rL-ud9" secondAttribute="trailing" id="SnN-dY-k2W"/>
+                            <constraint firstItem="mGH-rL-ud9" firstAttribute="leading" secondItem="lcT-Ok-MDK" secondAttribute="leading" id="Xn8-73-cd5"/>
+                            <constraint firstItem="kVS-TJ-AAe" firstAttribute="height" secondItem="lcT-Ok-MDK" secondAttribute="height" multiplier="1:6" id="wKH-Nc-7X1"/>
+                            <constraint firstItem="kVS-TJ-AAe" firstAttribute="top" secondItem="lcT-Ok-MDK" secondAttribute="top" id="zSZ-MG-8rh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerView" destination="kVS-TJ-AAe" id="TXW-P5-CM3"/>
+                        <outlet property="tableView" destination="mGH-rL-ud9" id="JNQ-rV-7o7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yls-05-deQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="45"/>
+        </scene>
+    </scenes>
+</document>

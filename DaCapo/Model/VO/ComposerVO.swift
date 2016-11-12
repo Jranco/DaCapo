@@ -9,25 +9,28 @@
 import Foundation
 import ObjectMapper
 
-class ComposerVO: ComposerProtocol, Mappable
+class ComposerVO: ComposerProtocol, ImageDownloadProtocol, Mappable
 {
+    //MARK: - ImageDownloadProtocol -
+    
+    var mainImage: UIImage?
+    
+    var mainImageURL: String?
+        {
+        get {
+            
+            guard images != nil && (images?.count)! > 0 else { return nil }
+            
+            let imageURL = images?[1]["url"]
+            return imageURL as! String?
+        }
+    }
+
     // MARK: - ComposerProtocol  -
 
     var id: String?
     var name: String?
-    var mainImage: UIImage?
     var images: [AnyObject]?
-
-    var mainImageURL: String?
-    {
-        get {
-            
-            guard images != nil && (images?.count)! > 0 else { return nil }
-
-            let imageURL = images?.first?["url"]
-            return imageURL as! String?
-        }
-    }
     
     // MARK: - Mappable -
     
