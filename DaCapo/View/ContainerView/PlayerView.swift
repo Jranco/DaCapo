@@ -62,11 +62,13 @@ class PlayerView: UIView
     
     func loadVideo(forComposer composer: ComposerProtocol, withTrack track: ComposerSnippetTrackProtocol)
     {
-        doMinimizeVideo()
+        doMinimizeVideo(animated: true)
 
-        player.load(withVideoId: track.videoId)
+        let playerVars = ["playsinline" : 1]
+        
+        player.load(withVideoId: track.videoId, playerVars: playerVars)
         player?.isHidden = true
-
+        player.frame = CGRect.zero
         minimizedPlayer?.composerLabel.text         = composer.name
         minimizedPlayer?.trackDescriptionLabel.text = track.title
     }
@@ -76,18 +78,40 @@ class PlayerView: UIView
     @IBAction func onDismissButton(_ sender: AnyObject)
     {
         delegate?.playerDidDismiss()
-        doMinimizeVideo()
+        doMinimizeVideo(animated: true)
     }
     
     // MARK: - Video Player actions -
     
-    func doMinimizeVideo()
+    func doMinimizeVideo(animated: Bool)
     {
-        frame = CGRect.init(x: 0, y: UIScreen.main.bounds.height - 55, width: UIScreen.main.bounds.width, height: 55)
-        topBar.isHidden = true
+        frame = CGRect.init(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 55)
+        
+        topBar.isHidden  = true
+        player?.isHidden = true
+        
+        minimizedPlayer?.frame = bounds
         addSubview(minimizedPlayer!)
         
-        player?.isHidden = true
+        if(animated == true)
+        {
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
+                
+                var viewFrame = self.frame
+                viewFrame.origin.y -= viewFrame.size.height
+                
+                self.frame = viewFrame
+                
+                }, completion: {
+                    finished in
+            })
+        }
+        else
+        {
+            frame.origin.y -= frame.size.height
+        }
+
+        
     }
     
     func doEnlargeVideo()
@@ -111,7 +135,31 @@ extension PlayerView: YTPlayerViewDelegate
     
     func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState)
     {
+        var stateStr = ""
         
+        switch state {
+        case YTPlayerState.unstarted:
+            stateStr = "unstarted"
+        case YTPlayerState.ended:
+            stateStr = "ended"
+        case YTPlayerState.playing:
+            stateStr = "playing"
+        case YTPlayerState.paused:
+            stateStr = "paused"
+        case YTPlayerState.buffering:
+            stateStr = "buffering"
+        case YTPlayerState.queued:
+            stateStr = "queued"
+        default:
+            stateStr = "unknown"
+        }
+        
+        minimizedPlayer?.stateLabel.text = stateStr
+
+        if(state == YTPlayerState.playing)
+        {
+            doMinimizeVideo(animated: false)
+        }
     }
     
     func playerView(_ playerView: YTPlayerView!, didChangeTo quality: YTPlaybackQuality)
