@@ -142,14 +142,7 @@ extension ContainerViewController: YTPlayerViewDelegate
     
     func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState)
     {
-        if(state == YTPlayerState.playing)
-        {
-            if self.state == ContainerState.isPlayingMinimizedVideo
-            {
-                playerView.isHidden = true
-            }
 
-        }
     }
     
     func playerView(_ playerView: YTPlayerView!, didChangeTo quality: YTPlaybackQuality)
