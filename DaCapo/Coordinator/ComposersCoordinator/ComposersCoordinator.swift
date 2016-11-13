@@ -18,6 +18,7 @@ class ComposersCoordinator: Coordinator
     {
         self.window = window
         navigationController    = UINavigationController.init()
+        navigationController.navigationBar.isOpaque = true
         
         let storyboard = UIStoryboard(name: "Container", bundle: nil)
 

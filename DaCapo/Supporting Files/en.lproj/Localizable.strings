@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  DaCapo
+
+  Created by Thomas Segkoulis on 13/11/16.
+  Copyright © 2016 Thomas Segkoulis. All rights reserved.
+*/
+
+"kYTPlayerStateUnstarted" = "unstarted";
+"kYTPlayerStateEnded"     = "ended";
+"kYTPlayerStatePlaying"   = "playing";
+"kYTPlayerStatePaused"    = "paused";
+"kYTPlayerStateBuffering" = "buffering";
+"kYTPlayerStateQueued"    = "queued";
+"kYTPlayerStateUnknown"   = "unknown";
+"playing"   = "ttt";
+

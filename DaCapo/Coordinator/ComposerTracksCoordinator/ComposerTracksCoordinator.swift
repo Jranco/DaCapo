@@ -29,7 +29,7 @@ class ComposerTracksCoordinator: Coordinator
         guard let composersTableViewController = (storyboard.instantiateViewController(withIdentifier: "ComposerTracksViewController") as? ComposerTracksViewController) else { return }
         
         let viewModel   = ComposerSnippetTracksViewModel()
-        viewModel.model = ComposerSnippetTracksModel.init(withComposerName: (composerVO?.name)!)
+        viewModel.model = ComposerSnippetTracksModel.init(withComposer: composerVO!)
         viewModel.coordinatorDelegate = self
         
         composersTableViewController.viewModel = viewModel

@@ -17,6 +17,7 @@
 		E9117F931DD856E800CCCC90 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9117F921DD856E800CCCC90 /* PlayerView.swift */; };
 		E9117F951DD856F700CCCC90 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9117F941DD856F700CCCC90 /* PlayerView.xib */; };
 		E9117F971DD8624B00CCCC90 /* MinimizedPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9117F961DD8624B00CCCC90 /* MinimizedPlayerView.xib */; };
+		E9117F9A1DD8925F00CCCC90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9117F9C1DD8925F00CCCC90 /* Localizable.strings */; };
 		E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E913864B1DD1A70E001CE163 /* Assets.xcassets */; };
 		E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */; };
 		E913865A1DD1A70E001CE163 /* DaCapoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386591DD1A70E001CE163 /* DaCapoTests.swift */; };
@@ -93,6 +94,7 @@
 		E9117F921DD856E800CCCC90 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		E9117F941DD856F700CCCC90 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		E9117F961DD8624B00CCCC90 /* MinimizedPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MinimizedPlayerView.xib; sourceTree = "<group>"; };
+		E9117F9D1DD8926300CCCC90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E913863F1DD1A70E001CE163 /* DaCapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaCapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E913864B1DD1A70E001CE163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E913864E1DD1A70E001CE163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				E91AC44C1DD25F8E0087930E /* Constants.swift */,
+				E9117F9C1DD8925F00CCCC90 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94F53FB1DD3F80700E24B88 /* LoadingMoreUsersTableViewCell.xib in Resources */,
+				E9117F9A1DD8925F00CCCC90 /* Localizable.strings in Resources */,
 				E9117F951DD856F700CCCC90 /* PlayerView.xib in Resources */,
 				E9117F971DD8624B00CCCC90 /* MinimizedPlayerView.xib in Resources */,
 				E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */,
@@ -947,6 +951,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E9117F9C1DD8925F00CCCC90 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9117F9D1DD8926300CCCC90 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
