@@ -20,21 +20,18 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="composerTrackBG" translatesAutoresizingMaskIntoConstraints="NO" id="Q78-q3-Xmv"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-TJ-AAe" userLabel="ViewHeader">
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="composerTrackBG" translatesAutoresizingMaskIntoConstraints="NO" id="UGr-ld-nfQ"/>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ComposerPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZNE-4U-QOZ">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZNE-4U-QOZ" secondAttribute="height" multiplier="1:1" id="yku-DB-yg7"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="UGr-ld-nfQ" firstAttribute="top" secondItem="kVS-TJ-AAe" secondAttribute="top" id="QuP-6b-YPZ"/>
-                                    <constraint firstItem="UGr-ld-nfQ" firstAttribute="leading" secondItem="kVS-TJ-AAe" secondAttribute="leading" id="Xj1-e5-z8t"/>
-                                    <constraint firstItem="ZNE-4U-QOZ" firstAttribute="centerX" secondItem="UGr-ld-nfQ" secondAttribute="centerX" id="Zcr-of-KIy"/>
-                                    <constraint firstAttribute="trailing" secondItem="UGr-ld-nfQ" secondAttribute="trailing" id="hfM-Af-aal"/>
+                                    <constraint firstItem="ZNE-4U-QOZ" firstAttribute="centerX" secondItem="kVS-TJ-AAe" secondAttribute="centerX" id="2a7-Te-xVi"/>
                                     <constraint firstItem="ZNE-4U-QOZ" firstAttribute="top" secondItem="kVS-TJ-AAe" secondAttribute="top" constant="20" id="qc8-L6-3Zg"/>
                                     <constraint firstAttribute="bottom" secondItem="ZNE-4U-QOZ" secondAttribute="bottom" constant="20" id="x68-Bt-n9a"/>
                                 </constraints>
@@ -49,8 +46,12 @@
                             <constraint firstItem="fcN-P5-U9e" firstAttribute="top" secondItem="mGH-rL-ud9" secondAttribute="bottom" id="Drn-dV-lk5"/>
                             <constraint firstItem="mGH-rL-ud9" firstAttribute="top" secondItem="FQz-EG-izb" secondAttribute="bottom" id="GMn-H8-d1r"/>
                             <constraint firstAttribute="trailing" secondItem="kVS-TJ-AAe" secondAttribute="trailing" id="OYQ-H6-rOS"/>
+                            <constraint firstItem="Q78-q3-Xmv" firstAttribute="top" secondItem="FQz-EG-izb" secondAttribute="bottom" id="RAF-HR-9Ps"/>
                             <constraint firstAttribute="trailing" secondItem="mGH-rL-ud9" secondAttribute="trailing" id="SnN-dY-k2W"/>
                             <constraint firstItem="mGH-rL-ud9" firstAttribute="leading" secondItem="lcT-Ok-MDK" secondAttribute="leading" id="Xn8-73-cd5"/>
+                            <constraint firstItem="Q78-q3-Xmv" firstAttribute="leading" secondItem="lcT-Ok-MDK" secondAttribute="leading" id="h5X-cL-1Lz"/>
+                            <constraint firstItem="fcN-P5-U9e" firstAttribute="top" secondItem="Q78-q3-Xmv" secondAttribute="bottom" id="jy8-9l-djg"/>
+                            <constraint firstAttribute="trailing" secondItem="Q78-q3-Xmv" secondAttribute="trailing" id="rtG-R2-DR9"/>
                             <constraint firstItem="kVS-TJ-AAe" firstAttribute="height" secondItem="lcT-Ok-MDK" secondAttribute="height" multiplier="1:6" id="wKH-Nc-7X1"/>
                             <constraint firstItem="kVS-TJ-AAe" firstAttribute="top" secondItem="lcT-Ok-MDK" secondAttribute="top" constant="64" id="zSZ-MG-8rh"/>
                         </constraints>

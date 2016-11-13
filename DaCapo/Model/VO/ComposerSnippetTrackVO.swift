@@ -18,7 +18,7 @@ class ComposerSnippetTrackVO: ComposerSnippetTrackProtocol, ImageDownloadProtoco
     var mainImageURL: String?
 
 
-    //MARK: - ComposerSnippetTrackProtocol -
+    // MARK: - ComposerSnippetTrackProtocol -
     
     var kind: String?
     var etag: String?
@@ -29,6 +29,8 @@ class ComposerSnippetTrackVO: ComposerSnippetTrackProtocol, ImageDownloadProtoco
     var description: String?
     var channelTitle: String?
     var liveBroadcastContent: String?
+    var thumbnailMediumWidth: String?
+    var thumbnailMediumHeight: String?
     
     // MARK: - Mappable -
     
@@ -39,15 +41,17 @@ class ComposerSnippetTrackVO: ComposerSnippetTrackProtocol, ImageDownloadProtoco
     
     func mapping(map: Map)
     {
-        kind                 <- map["kind"]
-        etag                 <- map["etag"]
-        videoId              <- map["id.videoId"]
-        publishedAt          <- map["snippet.publishedAt"]
-        channelId            <- map["snippet.channelId"]
-        title                <- map["snippet.title"]
-        description          <- map["snippet.description"]
-        mainImageURL         <- map["snippet.thumbnails.high.url"]
-        channelTitle         <- map["snippet.channelTitle"]
-        liveBroadcastContent <- map["snippet.liveBroadcastContent"]
+        kind                  <- map["kind"]
+        etag                  <- map["etag"]
+        videoId               <- map["id.videoId"]
+        publishedAt           <- map["snippet.publishedAt"]
+        channelId             <- map["snippet.channelId"]
+        title                 <- map["snippet.title"]
+        description           <- map["snippet.description"]
+        mainImageURL          <- map["snippet.thumbnails.medium.url"]
+        channelTitle          <- map["snippet.channelTitle"]
+        liveBroadcastContent  <- map["snippet.liveBroadcastContent"]
+        thumbnailMediumWidth  <- map["snippet.thumbnails.medium.width"]
+        thumbnailMediumHeight <- map["snippet.thumbnails.medium.height"]
     }
 }

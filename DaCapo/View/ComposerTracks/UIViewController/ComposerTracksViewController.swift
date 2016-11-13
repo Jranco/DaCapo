@@ -29,7 +29,6 @@ class ComposerTracksViewController: UIViewController
         willSet{
             
             viewModel?.viewDelegate = nil
-            
         }
         
         didSet{
@@ -82,6 +81,7 @@ class ComposerTracksViewController: UIViewController
         UIView.animate(withDuration: 0.3,
                        animations: {
                         self.composerImageView.alpha = 1
+                        self.headerView.alpha        = 1
         })
     }
     override func viewDidLayoutSubviews()
@@ -90,6 +90,7 @@ class ComposerTracksViewController: UIViewController
         
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.size.height, 0, 0, 0)
         initTableViewOffsetY = tableView.contentOffset.y
+        
         composerImageView.setRoundedCorners()
         
         didAppear = true
@@ -135,11 +136,9 @@ class ComposerTracksViewController: UIViewController
         
         if(didAppear == true)
         {
-            print("asd: %f", composerImageViewZoomFactor)
             if(composerImageViewZoomFactor == 0 || composerImageViewZoomFactor < -150.0)
             {
-                composerImageView.transform = CGAffineTransform.identity
-            }
+                composerImageView.transform = CGAffineTransform.identity            }
             else
             {
                 composerImageView.transform = CGAffineTransform(scaleX: 1 + composerImageViewZoomFactor * 0.005, y: 1 + composerImageViewZoomFactor * 0.005)
@@ -230,6 +229,8 @@ extension ComposerTracksViewController: UITableViewDataSource
         let composerTrackData = self.viewModel?.composerSnippetTracksAtIndexPath(indexPath: indexPath)
         
         cell.composerTrackData = composerTrackData
+        
+        cell.trackImageView.frame = CGRect.init(x: 0, y: 0, width: 100, height: 30)
         
         if (!self.tableView.isDragging && !self.tableView.isDecelerating)
         {

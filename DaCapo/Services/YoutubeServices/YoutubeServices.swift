@@ -82,6 +82,7 @@ class YoutubeServices: NSObject
         let maxResults = NSURLQueryItem(name: "maxResults", value: String(format: "%d", limit))
         let pageToken  = NSURLQueryItem(name: "pageToken", value: token)
         let order      = NSURLQueryItem(name: "order", value: order)
+        let type       = NSURLQueryItem(name: "type", value: "video")
         let key        = NSURLQueryItem(name: "key", value: "AIzaSyCjMasplfcJ5e7RO4Yf9haDKr3Tmgf1l0w")
         
         urlComponents.queryItems = [q          as URLQueryItem,
@@ -89,6 +90,7 @@ class YoutubeServices: NSObject
                                     maxResults as URLQueryItem,
                                     pageToken  as URLQueryItem,
                                     order      as URLQueryItem,
+                                    type       as URLQueryItem,
                                     key        as URLQueryItem]
         
         return urlComponents.url!

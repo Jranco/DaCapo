@@ -19,4 +19,6 @@ protocol ComposerSnippetTrackProtocol
     var description: String? {get}
     var channelTitle: String? {get}
     var liveBroadcastContent: String? {get}
+    var thumbnailMediumWidth: String? {get}
+    var thumbnailMediumHeight: String? {get}
 }

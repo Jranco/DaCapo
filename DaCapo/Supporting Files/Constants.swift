@@ -18,7 +18,7 @@ struct Constants
     
     struct AsyncImageDownloader
     {
-        static let MaxConcurrentImageDownloadOperationCount = 8 as Int
+        static let MaxConcurrentImageDownloadOperationCount = 4 as Int
     }
     
     struct ComposerListView
