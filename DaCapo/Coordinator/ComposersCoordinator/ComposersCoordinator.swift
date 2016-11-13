@@ -18,7 +18,10 @@ class ComposersCoordinator: Coordinator
     {
         self.window = window
         navigationController    = UINavigationController.init()
-        navigationController.navigationBar.isOpaque = true
+        navigationController.navigationBar.isOpaque     = true
+        navigationController.navigationBar.barTintColor = UIColor.init(red: 5.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+        navigationController.navigationBar.tintColor    = UIColor.white
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         let storyboard = UIStoryboard(name: "Container", bundle: nil)
 
