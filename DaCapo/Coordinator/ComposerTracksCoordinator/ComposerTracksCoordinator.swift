@@ -12,10 +12,10 @@ class ComposerTracksCoordinator: Coordinator
 {
     var window: UIWindow
     var navigationController: UINavigationController
-    var containerViewController: UIViewController
+    var containerViewController: ContainerViewController
     var composerVO: ComposerVO?
     
-    init(window: UIWindow, navigationController: UINavigationController, containerViewController: UIViewController)
+    init(window: UIWindow, navigationController: UINavigationController, containerViewController: ContainerViewController)
     {
         self.window = window
         self.navigationController    = navigationController
@@ -40,8 +40,8 @@ class ComposerTracksCoordinator: Coordinator
 
 extension ComposerTracksCoordinator: ComposerSnippetTracksViewModelCoordinatorDelegate
 {
-    func showComposerDetails(composer: ComposerVO)
+    func doStartVideo(forTrack track: ComposerSnippetTrackProtocol)
     {
-        
+        containerViewController.doStartVideo(forComposer: composerVO!, forTrack: track)
     }
 }

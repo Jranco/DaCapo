@@ -196,15 +196,8 @@ extension ComposerTracksViewController: UITableViewDelegate
         //        guard tableView.cellForRowAtIndexPath(indexPath)?.isKindOfClass(ComposersTableViewCell) == true else { return }
         //
         //        self.viewModel?.showComposerDetailsForComposerAtIndex(indexPath: indexPath)
-        
-        let videoPlayer = YTPlayerView.init(frame: CGRect.init(x: 20, y: 100, width: 300, height: 100))
-        tableView.addSubview(videoPlayer)
-        
-        let snippetTrack = self.viewModel?.composerSnippetTracksAtIndexPath(indexPath: indexPath as NSIndexPath)
-        let videoId      = snippetTrack?.videoId
-        
-        videoPlayer.load(withVideoId: videoId)
-        videoPlayer.playVideo()
+  
+        self.viewModel?.didSelectTrackAtIndex(indexPath: indexPath as NSIndexPath)
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath)

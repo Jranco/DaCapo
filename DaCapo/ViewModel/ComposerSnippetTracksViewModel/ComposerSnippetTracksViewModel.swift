@@ -188,9 +188,11 @@ class ComposerSnippetTracksViewModel: ComposerSnippetTracksViewModelProtocol
      @param indexPath Indexpath of selected Composer.
      
      */
-    func playTrackAtIndex(indexPath: NSIndexPath)
+    func didSelectTrackAtIndex(indexPath: NSIndexPath)
     {
-        
+        let snippetTrack = model?.snippetTracks![indexPath.row]
+
+        coordinatorDelegate?.doStartVideo(forTrack: snippetTrack!)
     }
     
     /**

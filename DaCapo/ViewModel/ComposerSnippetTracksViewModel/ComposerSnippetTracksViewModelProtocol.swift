@@ -35,7 +35,7 @@ protocol ComposerSnippetTracksViewModelCoordinatorDelegate
      
      @param user UserVO object
      */
-    func showComposerDetails(composer: ComposerVO)
+    func doStartVideo(forTrack track: ComposerSnippetTrackProtocol)
 }
 
 /**
@@ -137,7 +137,7 @@ protocol ComposerSnippetTracksViewModelProtocol
      @param indexPath Indexpath of selected Composer.
      
      */
-    func playTrackAtIndex(indexPath: NSIndexPath)
+    func didSelectTrackAtIndex(indexPath: NSIndexPath)
     
     /**
      Starts async download of Composer's image for the given indexPath.

@@ -40,6 +40,10 @@
 		E937E81F1DD6FD5A0010149F /* ComposerTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937E81D1DD6FD5A0010149F /* ComposerTracksTableViewCell.swift */; };
 		E937E8201DD6FD5A0010149F /* ComposerTracksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E937E81E1DD6FD5A0010149F /* ComposerTracksTableViewCell.xib */; };
 		E937E8231DD70AD00010149F /* ComposerTracksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937E8221DD70AD00010149F /* ComposerTracksCoordinator.swift */; };
+		E937E82D1DD77B340010149F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937E82C1DD77B340010149F /* ContainerViewController.swift */; };
+		E937E82F1DD77D3B0010149F /* Container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E937E82E1DD77D3B0010149F /* Container.storyboard */; };
+		E937E8381DD791110010149F /* MinimizedPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937E8371DD791110010149F /* MinimizedPlayerView.swift */; };
+		E937E83A1DD7911D0010149F /* MinimizedPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E937E8391DD7911D0010149F /* MinimizedPlayerView.xib */; };
 		E94F53F11DD3F6EE00E24B88 /* ComposersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F53F01DD3F6EE00E24B88 /* ComposersTableViewController.swift */; };
 		E94F53F31DD3F71700E24B88 /* Composers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94F53F21DD3F71700E24B88 /* Composers.storyboard */; };
 		E94F53F81DD3F80700E24B88 /* ComposersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F53F41DD3F80700E24B88 /* ComposersTableViewCell.swift */; };
@@ -116,6 +120,11 @@
 		E937E81D1DD6FD5A0010149F /* ComposerTracksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerTracksTableViewCell.swift; sourceTree = "<group>"; };
 		E937E81E1DD6FD5A0010149F /* ComposerTracksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposerTracksTableViewCell.xib; sourceTree = "<group>"; };
 		E937E8221DD70AD00010149F /* ComposerTracksCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerTracksCoordinator.swift; sourceTree = "<group>"; };
+		E937E82A1DD7794D0010149F /* DaCapo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaCapo-Bridging-Header.h"; sourceTree = "<group>"; };
+		E937E82C1DD77B340010149F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		E937E82E1DD77D3B0010149F /* Container.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Container.storyboard; sourceTree = "<group>"; };
+		E937E8371DD791110010149F /* MinimizedPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimizedPlayerView.swift; sourceTree = "<group>"; };
+		E937E8391DD7911D0010149F /* MinimizedPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MinimizedPlayerView.xib; sourceTree = "<group>"; };
 		E94F53F01DD3F6EE00E24B88 /* ComposersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersTableViewController.swift; sourceTree = "<group>"; };
 		E94F53F21DD3F71700E24B88 /* Composers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Composers.storyboard; sourceTree = "<group>"; };
 		E94F53F41DD3F80700E24B88 /* ComposersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersTableViewCell.swift; sourceTree = "<group>"; };
@@ -303,6 +312,7 @@
 		E91386781DD1A997001CE163 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E937E82B1DD7795E0010149F /* ContainerView */,
 				E937E8241DD75A420010149F /* YTPlayerView */,
 				E94F53FC1DD3F8E800E24B88 /* Common */,
 				E94F53EB1DD3F67B00E24B88 /* ComposersView */,
@@ -474,8 +484,20 @@
 		E937E8241DD75A420010149F /* YTPlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				E937E82A1DD7794D0010149F /* DaCapo-Bridging-Header.h */,
 			);
 			path = YTPlayerView;
+			sourceTree = "<group>";
+		};
+		E937E82B1DD7795E0010149F /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				E937E82C1DD77B340010149F /* ContainerViewController.swift */,
+				E937E82E1DD77D3B0010149F /* Container.storyboard */,
+				E937E8371DD791110010149F /* MinimizedPlayerView.swift */,
+				E937E8391DD7911D0010149F /* MinimizedPlayerView.xib */,
+			);
+			path = ContainerView;
 			sourceTree = "<group>";
 		};
 		E94F53EB1DD3F67B00E24B88 /* ComposersView */ = {
@@ -678,8 +700,10 @@
 			files = (
 				E94F53FB1DD3F80700E24B88 /* LoadingMoreUsersTableViewCell.xib in Resources */,
 				E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */,
+				E937E83A1DD7911D0010149F /* MinimizedPlayerView.xib in Resources */,
 				E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */,
 				E937E8201DD6FD5A0010149F /* ComposerTracksTableViewCell.xib in Resources */,
+				E937E82F1DD77D3B0010149F /* Container.storyboard in Resources */,
 				E937E81C1DD6F7E10010149F /* ComposerTracks.storyboard in Resources */,
 				90F4A5791DD49E1D00F54A6A /* Main.storyboard in Resources */,
 				E94F53F31DD3F71700E24B88 /* Composers.storyboard in Resources */,
@@ -855,6 +879,7 @@
 				E94F53FA1DD3F80700E24B88 /* LoadingMoreUsersTableViewCell.swift in Sources */,
 				E91AC44A1DD25A440087930E /* ComposerVO.swift in Sources */,
 				E9C464CF1DD3BE8700176381 /* ComposersModelProtocol.swift in Sources */,
+				E937E8381DD791110010149F /* MinimizedPlayerView.swift in Sources */,
 				E94F53F81DD3F80700E24B88 /* ComposersTableViewCell.swift in Sources */,
 				E91AC4511DD2629C0087930E /* ServiceManager.swift in Sources */,
 				E937E81A1DD6F7AC0010149F /* ComposerTracksViewController.swift in Sources */,
@@ -871,6 +896,7 @@
 				E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */,
 				90F4A57B1DD49F5D00F54A6A /* ComposersModel.swift in Sources */,
 				E937E7F91DD658990010149F /* SearchComposersModel.swift in Sources */,
+				E937E82D1DD77B340010149F /* ContainerViewController.swift in Sources */,
 				E937E80F1DD6EF1F0010149F /* ComposerSnippetTracksViewModel.swift in Sources */,
 				E937E8121DD6F3DA0010149F /* ImageDownloadProtocol.swift in Sources */,
 				E9C464D71DD3E56F00176381 /* ComposersViewModel.swift in Sources */,

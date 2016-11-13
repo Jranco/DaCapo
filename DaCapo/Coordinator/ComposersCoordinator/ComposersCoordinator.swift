@@ -18,7 +18,10 @@ class ComposersCoordinator: Coordinator
     {
         self.window = window
         navigationController    = UINavigationController.init()
-        containerViewController = UIViewController.init()
+        
+        let storyboard = UIStoryboard(name: "Container", bundle: nil)
+
+        containerViewController = (storyboard.instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!
     }
     
     func start()
@@ -47,7 +50,7 @@ extension ComposersCoordinator: ComposersViewModelCoordinatorDelegate
 {
     func showComposerDetails(composer: ComposerVO)
     {
-        let composerTracksCoordinator = ComposerTracksCoordinator.init(window: window, navigationController: navigationController, containerViewController: containerViewController)
+        let composerTracksCoordinator = ComposerTracksCoordinator.init(window: window, navigationController: navigationController, containerViewController: containerViewController as! ContainerViewController)
         composerTracksCoordinator.composerVO = composer
         
         composerTracksCoordinator.start()
