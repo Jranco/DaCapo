@@ -14,6 +14,13 @@ class ComposerTracksViewController: UIViewController
     
     @IBOutlet var headerView: UIView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var composerImageView: UIImageView!
+
+    var didAppear = false
+    
+    // MARK: - Constraints/etc -
+    
+    var initTableViewOffsetY = 0.0 as CGFloat
     
     // MARK: - ViewModel -
     
@@ -51,6 +58,7 @@ class ComposerTracksViewController: UIViewController
                 
                 self.title = title
         })
+        
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -62,6 +70,29 @@ class ComposerTracksViewController: UIViewController
             self.refreshTrackList(sender: self)
         }
         
+        composerImageView.image = self.viewModel?.model?.composer?.mainImage
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        composerImageView.alpha = 0
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.composerImageView.alpha = 1
+        })
+    }
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
+        tableView.contentInset = UIEdgeInsetsMake(headerView.frame.size.height, 0, 0, 0)
+        initTableViewOffsetY = tableView.contentOffset.y
+        composerImageView.setRoundedCorners()
+        
+        didAppear = true
     }
 
     override func didReceiveMemoryWarning()
@@ -80,6 +111,13 @@ class ComposerTracksViewController: UIViewController
                 self.tableView.reloadData()
                 self.tableView.isUserInteractionEnabled = true
                 
+                self.tableView.alpha = 0
+                
+                UIView.animate(withDuration: 0.3,
+                               animations: {
+                                self.tableView.alpha = 1
+                })
+                
             }, onFailure:
             {
                 (error) in
@@ -90,6 +128,25 @@ class ComposerTracksViewController: UIViewController
     }
     
     // MARK: - UIScrollViewDelegate -
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        let composerImageViewZoomFactor = -(scrollView.contentOffset.y - initTableViewOffsetY)
+        
+        if(didAppear == true)
+        {
+            print("asd: %f", composerImageViewZoomFactor)
+            if(composerImageViewZoomFactor == 0 || composerImageViewZoomFactor < -150.0)
+            {
+                composerImageView.transform = CGAffineTransform.identity
+            }
+            else
+            {
+                composerImageView.transform = CGAffineTransform(scaleX: 1 + composerImageViewZoomFactor * 0.005, y: 1 + composerImageViewZoomFactor * 0.005)
+            }
+        }
+
+    }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     {

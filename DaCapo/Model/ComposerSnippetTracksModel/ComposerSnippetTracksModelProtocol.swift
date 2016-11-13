@@ -10,13 +10,13 @@ import Foundation
 
 protocol ComposerSnippetTracksModelProtocol
 {
-    var composerName: String? {get set}
+    var composer: ComposerProtocol? {get set}
     var snippetTracksTotal: Int? {get set}
     var nextPageToken: String? {get set}
     
     var snippetTracks: [ComposerSnippetTrackVO]? {get set}
 
-    init(withComposerName name: String)
+    init(withComposer composer: ComposerProtocol)
 
     func reloadSnippetTracks(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)
     func loadMoreSnippetTracks(onSuccess: @escaping (_ newSnippetTracks: NSInteger, _ numOfNewSnippetTracks: NSInteger) -> Void, onFailure: @escaping (NSError) -> Void)

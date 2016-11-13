@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,36 +17,58 @@
                         <viewControllerLayoutGuide type="bottom" id="fcN-P5-U9e"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lcT-Ok-MDK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-TJ-AAe" userLabel="ViewHeader">
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="composerTrackBG" translatesAutoresizingMaskIntoConstraints="NO" id="UGr-ld-nfQ"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ComposerPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZNE-4U-QOZ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZNE-4U-QOZ" secondAttribute="height" multiplier="1:1" id="yku-DB-yg7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UGr-ld-nfQ" firstAttribute="top" secondItem="kVS-TJ-AAe" secondAttribute="top" id="QuP-6b-YPZ"/>
+                                    <constraint firstItem="UGr-ld-nfQ" firstAttribute="leading" secondItem="kVS-TJ-AAe" secondAttribute="leading" id="Xj1-e5-z8t"/>
+                                    <constraint firstItem="ZNE-4U-QOZ" firstAttribute="centerX" secondItem="UGr-ld-nfQ" secondAttribute="centerX" id="Zcr-of-KIy"/>
+                                    <constraint firstAttribute="trailing" secondItem="UGr-ld-nfQ" secondAttribute="trailing" id="hfM-Af-aal"/>
+                                    <constraint firstItem="ZNE-4U-QOZ" firstAttribute="top" secondItem="kVS-TJ-AAe" secondAttribute="top" constant="20" id="qc8-L6-3Zg"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZNE-4U-QOZ" secondAttribute="bottom" constant="20" id="x68-Bt-n9a"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGH-rL-ud9">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kVS-TJ-AAe" firstAttribute="leading" secondItem="lcT-Ok-MDK" secondAttribute="leading" id="3kL-a2-5bG"/>
-                            <constraint firstItem="mGH-rL-ud9" firstAttribute="top" secondItem="kVS-TJ-AAe" secondAttribute="bottom" id="4Oq-oH-kZy"/>
                             <constraint firstItem="fcN-P5-U9e" firstAttribute="top" secondItem="mGH-rL-ud9" secondAttribute="bottom" id="Drn-dV-lk5"/>
+                            <constraint firstItem="mGH-rL-ud9" firstAttribute="top" secondItem="FQz-EG-izb" secondAttribute="bottom" id="GMn-H8-d1r"/>
                             <constraint firstAttribute="trailing" secondItem="kVS-TJ-AAe" secondAttribute="trailing" id="OYQ-H6-rOS"/>
                             <constraint firstAttribute="trailing" secondItem="mGH-rL-ud9" secondAttribute="trailing" id="SnN-dY-k2W"/>
                             <constraint firstItem="mGH-rL-ud9" firstAttribute="leading" secondItem="lcT-Ok-MDK" secondAttribute="leading" id="Xn8-73-cd5"/>
                             <constraint firstItem="kVS-TJ-AAe" firstAttribute="height" secondItem="lcT-Ok-MDK" secondAttribute="height" multiplier="1:6" id="wKH-Nc-7X1"/>
-                            <constraint firstItem="kVS-TJ-AAe" firstAttribute="top" secondItem="lcT-Ok-MDK" secondAttribute="top" id="zSZ-MG-8rh"/>
+                            <constraint firstItem="kVS-TJ-AAe" firstAttribute="top" secondItem="lcT-Ok-MDK" secondAttribute="top" constant="64" id="zSZ-MG-8rh"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="composerImageView" destination="ZNE-4U-QOZ" id="esw-vG-VlN"/>
                         <outlet property="headerView" destination="kVS-TJ-AAe" id="TXW-P5-CM3"/>
                         <outlet property="tableView" destination="mGH-rL-ud9" id="JNQ-rV-7o7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yls-05-deQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="45"/>
+            <point key="canvasLocation" x="-12" y="44.527736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ComposerPlaceholder" width="94" height="101"/>
+        <image name="composerTrackBG" width="800" height="533"/>
+    </resources>
 </document>

@@ -13,7 +13,7 @@ class ComposerSnippetTracksModel: ComposerSnippetTracksModelProtocol
 {
     // MARK: - Properties -
 
-    var composerName: String? = ""
+    var composer: ComposerProtocol?
     var snippetTracksTotal: Int? = 0
     var nextPageToken: String?
     
@@ -27,11 +27,12 @@ class ComposerSnippetTracksModel: ComposerSnippetTracksModelProtocol
     {
     }
     
-    convenience required init(withComposerName name: String)
+    convenience required init(withComposer composer: ComposerProtocol)
     {
         self.init()
         
-        composerName = name
+        self.composer = composer
+
     }
     
     // MARK: - PopularComposersModelProtocol -
@@ -40,7 +41,7 @@ class ComposerSnippetTracksModel: ComposerSnippetTracksModelProtocol
     
     func reloadSnippetTracks(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)
     {
-        self.loadSnippetTracks(forArtist: composerName!,
+        self.loadSnippetTracks(forArtist: (composer?.name!)!,
                            withPageToken: "",
                                withLimit: 30,
                                onSuccess:
@@ -61,7 +62,7 @@ class ComposerSnippetTracksModel: ComposerSnippetTracksModelProtocol
     
     func loadMoreSnippetTracks(onSuccess: @escaping (_ newSnippetTracks: NSInteger, _ numOfNewSnippetTracks: NSInteger) -> Void, onFailure: @escaping (NSError) -> Void)
     {
-        self.loadSnippetTracks(forArtist: composerName!,
+        self.loadSnippetTracks(forArtist: (composer?.name!)!,
                            withPageToken: self.nextPageToken!,
                                withLimit: 30,
                                onSuccess:
