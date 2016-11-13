@@ -14,6 +14,9 @@
 		90F4A5791DD49E1D00F54A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F4A5781DD49E1D00F54A6A /* Main.storyboard */; };
 		90F4A57B1DD49F5D00F54A6A /* ComposersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A57A1DD49F5D00F54A6A /* ComposersModel.swift */; };
 		92709BF6237D3BDC5A2B59F7 /* Pods_DaCapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D482513D4B8B11C546DBAD4 /* Pods_DaCapo.framework */; };
+		E9117F931DD856E800CCCC90 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9117F921DD856E800CCCC90 /* PlayerView.swift */; };
+		E9117F951DD856F700CCCC90 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9117F941DD856F700CCCC90 /* PlayerView.xib */; };
+		E9117F971DD8624B00CCCC90 /* MinimizedPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9117F961DD8624B00CCCC90 /* MinimizedPlayerView.xib */; };
 		E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E913864B1DD1A70E001CE163 /* Assets.xcassets */; };
 		E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E913864D1DD1A70E001CE163 /* LaunchScreen.storyboard */; };
 		E913865A1DD1A70E001CE163 /* DaCapoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91386591DD1A70E001CE163 /* DaCapoTests.swift */; };
@@ -43,7 +46,6 @@
 		E937E82D1DD77B340010149F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937E82C1DD77B340010149F /* ContainerViewController.swift */; };
 		E937E82F1DD77D3B0010149F /* Container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E937E82E1DD77D3B0010149F /* Container.storyboard */; };
 		E937E8381DD791110010149F /* MinimizedPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937E8371DD791110010149F /* MinimizedPlayerView.swift */; };
-		E937E83A1DD7911D0010149F /* MinimizedPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E937E8391DD7911D0010149F /* MinimizedPlayerView.xib */; };
 		E94F53F11DD3F6EE00E24B88 /* ComposersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F53F01DD3F6EE00E24B88 /* ComposersTableViewController.swift */; };
 		E94F53F31DD3F71700E24B88 /* Composers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94F53F21DD3F71700E24B88 /* Composers.storyboard */; };
 		E94F53F81DD3F80700E24B88 /* ComposersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F53F41DD3F80700E24B88 /* ComposersTableViewCell.swift */; };
@@ -88,6 +90,9 @@
 		90F4A57A1DD49F5D00F54A6A /* ComposersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersModel.swift; sourceTree = "<group>"; };
 		AA27D83EB7812AAE1E269EAF /* Pods-DaCapo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF7F624EACD40DAEC5691D3C /* Pods-DaCapo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaCapo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaCapo/Pods-DaCapo.release.xcconfig"; sourceTree = "<group>"; };
+		E9117F921DD856E800CCCC90 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		E9117F941DD856F700CCCC90 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		E9117F961DD8624B00CCCC90 /* MinimizedPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MinimizedPlayerView.xib; sourceTree = "<group>"; };
 		E913863F1DD1A70E001CE163 /* DaCapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaCapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E913864B1DD1A70E001CE163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E913864E1DD1A70E001CE163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,7 +129,6 @@
 		E937E82C1DD77B340010149F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E937E82E1DD77D3B0010149F /* Container.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Container.storyboard; sourceTree = "<group>"; };
 		E937E8371DD791110010149F /* MinimizedPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimizedPlayerView.swift; sourceTree = "<group>"; };
-		E937E8391DD7911D0010149F /* MinimizedPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MinimizedPlayerView.xib; sourceTree = "<group>"; };
 		E94F53F01DD3F6EE00E24B88 /* ComposersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersTableViewController.swift; sourceTree = "<group>"; };
 		E94F53F21DD3F71700E24B88 /* Composers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Composers.storyboard; sourceTree = "<group>"; };
 		E94F53F41DD3F80700E24B88 /* ComposersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersTableViewCell.swift; sourceTree = "<group>"; };
@@ -495,7 +499,9 @@
 				E937E82C1DD77B340010149F /* ContainerViewController.swift */,
 				E937E82E1DD77D3B0010149F /* Container.storyboard */,
 				E937E8371DD791110010149F /* MinimizedPlayerView.swift */,
-				E937E8391DD7911D0010149F /* MinimizedPlayerView.xib */,
+				E9117F961DD8624B00CCCC90 /* MinimizedPlayerView.xib */,
+				E9117F921DD856E800CCCC90 /* PlayerView.swift */,
+				E9117F941DD856F700CCCC90 /* PlayerView.xib */,
 			);
 			path = ContainerView;
 			sourceTree = "<group>";
@@ -699,8 +705,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94F53FB1DD3F80700E24B88 /* LoadingMoreUsersTableViewCell.xib in Resources */,
+				E9117F951DD856F700CCCC90 /* PlayerView.xib in Resources */,
+				E9117F971DD8624B00CCCC90 /* MinimizedPlayerView.xib in Resources */,
 				E913864F1DD1A70E001CE163 /* LaunchScreen.storyboard in Resources */,
-				E937E83A1DD7911D0010149F /* MinimizedPlayerView.xib in Resources */,
 				E913864C1DD1A70E001CE163 /* Assets.xcassets in Resources */,
 				E937E8201DD6FD5A0010149F /* ComposerTracksTableViewCell.xib in Resources */,
 				E937E82F1DD77D3B0010149F /* Container.storyboard in Resources */,
@@ -893,6 +900,7 @@
 				E937E8091DD6EDB70010149F /* ComposerSnippetTracksModel.swift in Sources */,
 				90F4A5751DD49B1600F54A6A /* AppCoordinator.swift in Sources */,
 				E91AC44D1DD25F8E0087930E /* Constants.swift in Sources */,
+				E9117F931DD856E800CCCC90 /* PlayerView.swift in Sources */,
 				E91AC4531DD264FB0087930E /* SpotifyServices.swift in Sources */,
 				90F4A57B1DD49F5D00F54A6A /* ComposersModel.swift in Sources */,
 				E937E7F91DD658990010149F /* SearchComposersModel.swift in Sources */,

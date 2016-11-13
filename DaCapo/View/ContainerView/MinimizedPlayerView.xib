@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,50 +12,55 @@
             <rect key="frame" x="0.0" y="0.0" width="368" height="69"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmT-aC-cok">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-hv-VB5" userLabel="State Label">
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="xmT-aC-cok" secondAttribute="height" multiplier="5:4" id="l6l-eh-bwf"/>
+                        <constraint firstAttribute="width" constant="70" id="4aS-ec-p4E"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                    <state key="normal" title="Enlarge">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="onPlayerButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="lht-hH-dZs"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgT-Hi-m7n" userLabel="Composer Label">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="17" id="DAN-Qf-dE7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2It-8p-Qpf" userLabel="Track DescriptionLabel">
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-dX-FhT" userLabel="Maximize Button">
+                    <connections>
+                        <action selector="onMaximizeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="sYq-s4-mOB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgT-Hi-m7n" userLabel="Composer Label">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="1pW-td-elO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="xmT-aC-cok" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5UC-4Y-dBk"/>
-                <constraint firstItem="OgT-Hi-m7n" firstAttribute="leading" secondItem="xmT-aC-cok" secondAttribute="trailing" constant="8" id="7q5-kd-tbK"/>
-                <constraint firstItem="OgT-Hi-m7n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="UsE-9e-7S7"/>
-                <constraint firstAttribute="bottom" secondItem="xmT-aC-cok" secondAttribute="bottom" id="X1d-I2-Gvj"/>
-                <constraint firstItem="2It-8p-Qpf" firstAttribute="top" secondItem="OgT-Hi-m7n" secondAttribute="bottom" constant="4" id="g4g-e1-Nh9"/>
-                <constraint firstAttribute="trailing" secondItem="2It-8p-Qpf" secondAttribute="trailing" constant="4" id="hzU-n2-KlD"/>
-                <constraint firstItem="2It-8p-Qpf" firstAttribute="leading" secondItem="xmT-aC-cok" secondAttribute="trailing" constant="8" id="tLK-ws-seH"/>
-                <constraint firstItem="xmT-aC-cok" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tnB-UA-jwA"/>
-                <constraint firstAttribute="trailing" secondItem="OgT-Hi-m7n" secondAttribute="trailing" constant="4" id="yVS-qq-2AW"/>
-                <constraint firstAttribute="bottom" secondItem="2It-8p-Qpf" secondAttribute="bottom" id="zBB-zQ-8EM"/>
+                <constraint firstAttribute="bottom" secondItem="HFZ-hv-VB5" secondAttribute="bottom" id="6rG-dK-l9B"/>
+                <constraint firstItem="2It-8p-Qpf" firstAttribute="leading" secondItem="HFZ-hv-VB5" secondAttribute="trailing" id="AFQ-Xl-OEj"/>
+                <constraint firstItem="OTl-dX-FhT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fxb-cQ-9F6"/>
+                <constraint firstAttribute="trailing" secondItem="OTl-dX-FhT" secondAttribute="trailing" id="L6E-Q4-E25"/>
+                <constraint firstAttribute="trailing" secondItem="OgT-Hi-m7n" secondAttribute="trailing" constant="4" id="Rvn-Lt-pbL"/>
+                <constraint firstAttribute="bottom" secondItem="OTl-dX-FhT" secondAttribute="bottom" id="WGL-Ox-wPL"/>
+                <constraint firstItem="OgT-Hi-m7n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wfd-a0-y6Y"/>
+                <constraint firstAttribute="bottom" secondItem="2It-8p-Qpf" secondAttribute="bottom" id="XIb-zr-1oi"/>
+                <constraint firstItem="HFZ-hv-VB5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eWE-0c-GWQ"/>
+                <constraint firstItem="HFZ-hv-VB5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="guT-1u-EXE"/>
+                <constraint firstItem="OgT-Hi-m7n" firstAttribute="leading" secondItem="HFZ-hv-VB5" secondAttribute="trailing" id="i3K-cq-1Xu"/>
+                <constraint firstItem="OTl-dX-FhT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oKR-jq-hey"/>
+                <constraint firstItem="2It-8p-Qpf" firstAttribute="top" secondItem="OgT-Hi-m7n" secondAttribute="bottom" constant="-4" id="qVz-kA-Y0D"/>
+                <constraint firstAttribute="trailing" secondItem="2It-8p-Qpf" secondAttribute="trailing" constant="4" id="r7m-bc-K4P"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="composerLabel" destination="OgT-Hi-m7n" id="ee9-kt-aCD"/>
-                <outlet property="playerButton" destination="xmT-aC-cok" id="gC5-Ne-Psr"/>
-                <outlet property="trackDescriptionLabel" destination="2It-8p-Qpf" id="aUo-2B-pPp"/>
+                <outlet property="composerLabel" destination="OgT-Hi-m7n" id="qSG-Ub-2hj"/>
+                <outlet property="stateLabel" destination="HFZ-hv-VB5" id="OTN-Wg-V69"/>
+                <outlet property="trackDescriptionLabel" destination="2It-8p-Qpf" id="ot4-TS-6eu"/>
             </connections>
             <point key="canvasLocation" x="7" y="-53.5"/>
         </view>

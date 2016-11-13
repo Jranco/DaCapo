@@ -16,6 +16,10 @@ protocol MinimizedPlayerViewDelegate
 
 class MinimizedPlayerView: UIView
 {
+    // MARK: - Gesture
+    
+//    let gesture = UITapGestureRecognizer(target: self, action: #selector (didTap (_:)))
+
     // MARK: - MinimizedPlayerViewDelegate -
     
     var delegate: MinimizedPlayerViewDelegate?
@@ -24,11 +28,17 @@ class MinimizedPlayerView: UIView
     
     @IBOutlet var composerLabel: UILabel!
     @IBOutlet var trackDescriptionLabel: UILabel!
-    @IBOutlet var playerButton: UIButton!
-        
+    @IBOutlet var stateLabel: UILabel!
+
+    // MARK: LifeCycle
+    
     class func instanceFromNib() -> UIView
     {
         return UINib(nibName: "MinimizedPlayerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! MinimizedPlayerView
+    }
+    
+    override func didMoveToWindow()
+    {
     }
     
     // MARK: - player button interaction -
@@ -38,5 +48,8 @@ class MinimizedPlayerView: UIView
         self.delegate?.didPressEnlarge()
     }
     
-
+    @IBAction func onMaximizeButton(_ sender: AnyObject)
+    {
+        self.delegate?.didPressEnlarge()
+    }
 }
