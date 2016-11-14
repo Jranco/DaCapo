@@ -11,12 +11,6 @@ import ObjectMapper
 
 class ComposerSnippetTracksModel: ComposerSnippetTracksModelProtocol
 {
-    // MARK: - Properties -
-
-    var composer: ComposerProtocol?
-    var snippetTracksTotal: Int? = 0
-    var nextPageToken: String?
-    
     // MARK: - Services -
     
     let services = YoutubeServices()
@@ -36,6 +30,10 @@ class ComposerSnippetTracksModel: ComposerSnippetTracksModelProtocol
     }
     
     // MARK: - PopularComposersModelProtocol -
+    
+    var composer: ComposerProtocol?
+    var snippetTracksTotal: Int? = 0
+    var nextPageToken: String?
     
     var snippetTracks: [ComposerSnippetTrackVO]?
     

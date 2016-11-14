@@ -17,12 +17,11 @@ class ComposersTableViewController: UITableViewController
     // MARK: - UISearchController -
     
     let searchController = UISearchController.init(searchResultsController: nil)
-
     
     // MARK: - ViewModel -
     
     var viewModel: ComposersViewModel?
-        {
+    {
         willSet{
             
             viewModel?.viewDelegate = nil
@@ -41,22 +40,25 @@ class ComposersTableViewController: UITableViewController
     {
         super.viewDidLoad()
         
+        // Configure Search Controler
         searchController.searchResultsUpdater             = self
         searchController.searchBar.delegate               = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext                        = true
         tableView.tableHeaderView                         = searchController.searchBar
         
+        // Register custom UITableViewCells
         self.tableView.registerReusableCell(ComposersTableViewCell.self)
-        self.tableView.registerReusableCell(LoadingMoreUsersTableViewCell.self)
+        self.tableView.registerReusableCell(LoadingMoreTableViewCell.self)
         
         tableView.tableFooterView = UIView()
         
-        // Should be moved to ViewDidLoad, but there is a problem with the table offset
-        refreshControl = UIRefreshControl()
-        refreshControl!.attributedTitle = NSAttributedString(string: NSLocalizedString("kPullToRefresh", comment: ""))
-        refreshControl!.addTarget(self, action: #selector(refreshUserList), for: UIControlEvents.valueChanged)
+        // Configure UIRefreshControl
+//        refreshControl = UIRefreshControl()
+//        refreshControl!.attributedTitle = NSAttributedString(string: NSLocalizedString("kPullToRefresh", comment: ""))
+//        refreshControl!.addTarget(self, action: #selector(refreshUserList), for: UIControlEvents.valueChanged)
         
+        // Set title
         self.viewModel?.title(
             completionBlock: {
                 (title) in
@@ -78,10 +80,6 @@ class ComposersTableViewController: UITableViewController
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
-        tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
-        tableView.setNeedsUpdateConstraints()
-        tableView.setNeedsLayout()
     }
 
     override func didReceiveMemoryWarning()
@@ -91,7 +89,8 @@ class ComposersTableViewController: UITableViewController
 
     // MARK: - UITableViewDatasource -
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
     
@@ -109,7 +108,7 @@ class ComposersTableViewController: UITableViewController
     
     func tableViewCellForIndexPath(indexPath: NSIndexPath) -> UITableViewCell
     {
-        if(viewModel?.typeOfCellAtIndexPath(indexPath: indexPath) == UserListCellType.LoadMoreComposers)
+        if(viewModel?.typeOfCellAtIndexPath(indexPath: indexPath) == ComposerListCellType.LoadMoreComposers)
         {
             return loadingMoreUsersTableViewCell(indexPath: indexPath)
         }
@@ -119,9 +118,9 @@ class ComposersTableViewController: UITableViewController
         }
     }
     
-    func loadingMoreUsersTableViewCell(indexPath: NSIndexPath) -> LoadingMoreUsersTableViewCell
+    func loadingMoreUsersTableViewCell(indexPath: NSIndexPath) -> LoadingMoreTableViewCell
     {
-        let cell = tableView.dequeueReusableCell(indexPath: indexPath as IndexPath) as LoadingMoreUsersTableViewCell
+        let cell = tableView.dequeueReusableCell(indexPath: indexPath as IndexPath) as LoadingMoreTableViewCell
         
         cell.spinner.startAnimating()
         
@@ -161,14 +160,14 @@ class ComposersTableViewController: UITableViewController
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return Constants.ComposerListView.ComposerListTableViewCellHeight
+        return Constants.ComposerTableViewController.ComposerListTableViewCellHeight
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-//        guard tableView.cellForRowAtIndexPath(indexPath)?.isKindOfClass(ComposersTableViewCell) == true else { return }
-//
-        self.viewModel?.showUserDetailsForComposerAtIndex(indexPath: indexPath as NSIndexPath)
+        guard tableView.cellForRow(at: indexPath)?.isKind(of: ComposersTableViewCell.self) == true else {return}
+
+        self.viewModel?.showRelativeTracksForComposerAtIndex(indexPath: indexPath as NSIndexPath)
     }
     
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath)
@@ -182,10 +181,10 @@ class ComposersTableViewController: UITableViewController
     {
         self.tableView.isUserInteractionEnabled = false
         
-        self.viewModel?.refreshUsers(
+        self.viewModel?.refreshComposers(
             onSuccess: {
                 self.tableView.reloadData()
-                self.refreshControl!.endRefreshing()
+//                self.refreshControl!.endRefreshing()
                 self.tableView.isUserInteractionEnabled = true
                 
             }, onFailure:
@@ -223,8 +222,6 @@ class ComposersTableViewController: UITableViewController
     
     func searchComposers()
     {
-        print("searching for composers")
-        
         guard (searchController.isActive) &&  (searchController.searchBar.text != nil) else { return }
         
         viewModel?.searchComposers(withName: searchController.searchBar.text!)
@@ -254,11 +251,9 @@ extension ComposersTableViewController: UISearchBarDelegate
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
     {
         searchDelayer?.invalidate()
-
         viewModel?.cancelSearchComposers()
         
         tableView.reloadData()
-//        self.refreshUserList(sender: self)
     }
 }
 

@@ -17,11 +17,12 @@ class ComposersCoordinator: Coordinator
     init(window: UIWindow)
     {
         self.window = window
-        navigationController    = UINavigationController.init()
-        navigationController.navigationBar.isOpaque     = true
-        navigationController.navigationBar.barTintColor = UIColor.init(red: 5.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-        navigationController.navigationBar.tintColor    = UIColor.white
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        navigationController = UINavigationController.init()
+        navigationController.navigationBar.isOpaque            = true
+        navigationController.navigationBar.barTintColor        = Constants.Colors.navigationBarTintColor
+        navigationController.navigationBar.tintColor           = Constants.Colors.navigationTintColor
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Constants.Colors.navigationTintColor]
         
         let storyboard = UIStoryboard(name: "Container", bundle: nil)
 
@@ -35,24 +36,26 @@ class ComposersCoordinator: Coordinator
         guard let composersTableViewController = (storyboard.instantiateViewController(withIdentifier: "ComposersTableViewController") as? ComposersTableViewController) else { return }
         
         let viewModel   = ComposersViewModel()
-        viewModel.model = PopularComposersModel()
-        viewModel.popularComposersModel = viewModel.model as! PopularComposersModel
+        viewModel.currentModel = PopularComposersModel()
+        viewModel.popularComposersModel = viewModel.currentModel as? PopularComposersModel
         viewModel.coordinatorDelegate = self
         
         composersTableViewController.viewModel = viewModel
         
         navigationController.setViewControllers([composersTableViewController], animated: true)
+        
         containerViewController.addChildViewController(navigationController)
         containerViewController.view.addSubview(navigationController.view)
         navigationController.view.bounds = containerViewController.view.bounds
         navigationController.didMove(toParentViewController: containerViewController)
+        
         window.rootViewController = containerViewController
     }
 }
 
 extension ComposersCoordinator: ComposersViewModelCoordinatorDelegate
 {
-    func showComposerDetails(composer: ComposerVO)
+    func showRelativeTracks(forComposer  composer: ComposerVO)
     {
         let composerTracksCoordinator = ComposerTracksCoordinator.init(window: window, navigationController: navigationController, containerViewController: containerViewController as! ContainerViewController)
         composerTracksCoordinator.composerVO = composer

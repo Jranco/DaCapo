@@ -13,5 +13,5 @@
 "kYTPlayerStateBuffering" = "buffering";
 "kYTPlayerStateQueued"    = "queued";
 "kYTPlayerStateUnknown"   = "unknown";
-"playing"   = "ttt";
 
+"kLoadingMoreContent" = "loading more";

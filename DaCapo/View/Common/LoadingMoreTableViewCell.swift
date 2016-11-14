@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-class LoadingMoreUsersTableViewCell: UITableViewCell, NibReusable
+class LoadingMoreTableViewCell: UITableViewCell, NibReusable
 {
 
     // MARK: - Subviews
@@ -23,16 +23,13 @@ class LoadingMoreUsersTableViewCell: UITableViewCell, NibReusable
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        // Initialization code
         
-        self.labelLoadingMore.text = NSLocalizedString("kLoadingMoreUsers", comment: "")
+        self.labelLoadingMore.text = NSLocalizedString("kLoadingMoreContent", comment: "")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

@@ -11,13 +11,12 @@ import Reusable
 
 class ComposersTableViewCell: UITableViewCell, NibReusable
 {
-    // MARK: - Subviews
-
+    // MARK: - Subviews -
 
     @IBOutlet var composerImageView: UIImageView!
     @IBOutlet var composerNameLabel: UILabel!
     
-    // MARK: - DataSource
+    // MARK: - DataSource -
     
     var composerData: ComposerVO? {
         
@@ -38,7 +37,6 @@ class ComposersTableViewCell: UITableViewCell, NibReusable
                 {
                     composerImageView.image = UIImage(named: "ComposerPlaceholder")!
                 }
-                                
             }
             else
             {
@@ -47,7 +45,7 @@ class ComposersTableViewCell: UITableViewCell, NibReusable
         }
     }
 
-    // MARK: - LifeCycle
+    // MARK: - LifeCycle -
 
     override func awakeFromNib()
     {

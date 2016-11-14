@@ -12,7 +12,7 @@ import UIKit
  Types of Cell
  
  */
-enum UserListCellType {
+enum ComposerListCellType {
     
     case Composer
     case LoadMoreComposers
@@ -26,10 +26,15 @@ class ComposersViewModel: ComposersViewModelProtocol
      Model
      
      */
-    var model: ComposersModelProtocol?
+    var currentModel: ComposersModelProtocol?
     
-    var popularComposersModel = PopularComposersModel()
-    var searchComposersModel  = SearchComposersModel()
+    /**
+     Two available models, subclasses of ComposersModel
+     The current Model changes dynamically, depending on the current state of the View (search enabled or not).
+     
+     */
+    var popularComposersModel = PopularComposersModel() as PopularComposersModel?
+    var searchComposersModel  = SearchComposersModel() as SearchComposersModel?
 
     /**
      A delegate object which conforms to ComposersViewModelCoordinatorDelegate protocol in order to trigger navigation after interaction with View.
@@ -53,14 +58,14 @@ class ComposersViewModel: ComposersViewModelProtocol
     }
     
     /**
-     The 'usersCount' variable contains the cardinality of current loaded Users in the Model.
+     The 'composersCount' variable contains the cardinality of current loaded Composers in the Model.
      
      */
     var composersCount: Int {
         
-        guard model?.composers != nil else { return 0 }
+        guard currentModel?.composers != nil else { return 0 }
         
-        var composersCountTotal = (model?.composers?.count)!
+        var composersCountTotal = (currentModel?.composers?.count)!
         
         if(didLoadAllComposers() == false)
         {
@@ -68,7 +73,6 @@ class ComposersViewModel: ComposersViewModelProtocol
         }
         
         return composersCountTotal
-        
     }
 
     
@@ -85,7 +89,7 @@ class ComposersViewModel: ComposersViewModelProtocol
     func didLoadAllComposers() -> Bool
     {
 
-        if(model?.composersTotal == model?.composers?.count)
+        if(currentModel?.composersTotal == currentModel?.composers?.count)
         {
             return true;
         }
@@ -103,7 +107,7 @@ class ComposersViewModel: ComposersViewModelProtocol
      */
     func composerAtIndexPath(indexPath: NSIndexPath) -> ComposerVO?
     {
-        let composer = model?.composers![indexPath.row]
+        let composer = currentModel?.composers![indexPath.row]
         
         return composer
     }
@@ -112,25 +116,24 @@ class ComposersViewModel: ComposersViewModelProtocol
      Returns type of cell, given the indexPath.
      
      @param indexPath IndexPath of Cell.
-     @param completionBlock Completion block, passing the cell type as parameter.
+     @return ComposerListCellType (Composer or LoadMoreComposers)
      
      */
-    //TODO:
-    func typeOfCellAtIndexPath(indexPath: NSIndexPath) -> UserListCellType
+    func typeOfCellAtIndexPath(indexPath: NSIndexPath) -> ComposerListCellType
     {
         if(didLoadAllComposers() == true)
         {
-            return UserListCellType.Composer
+            return ComposerListCellType.Composer
         }
         else
         {
             if(indexPath.row < (self.composersCount) - 1)
             {
-                return UserListCellType.Composer
+                return ComposerListCellType.Composer
             }
             else
             {
-                return UserListCellType.LoadMoreComposers
+                return ComposerListCellType.LoadMoreComposers
             }
         }
     }
@@ -143,7 +146,7 @@ class ComposersViewModel: ComposersViewModelProtocol
      */
     func composerListIsEmpty() -> Bool
     {
-        if(self.model!.composers == nil || self.model?.composers?.count == 0)
+        if(self.currentModel!.composers == nil || self.currentModel?.composers?.count == 0)
         {
             return true
         }
@@ -160,11 +163,11 @@ class ComposersViewModel: ComposersViewModelProtocol
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func refreshUsers(onSuccess: @escaping () -> Void, onFailure: @escaping (_ error: NSError) -> Void)
+    func refreshComposers(onSuccess: @escaping () -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
         self.suspendAllImageDownloadingOperations()
         
-        model?.reloadComposers(
+        currentModel?.reloadComposers(
             onSuccess: {
                 
                 onSuccess()
@@ -180,7 +183,7 @@ class ComposersViewModel: ComposersViewModelProtocol
     }
     
     /**
-     Loades next batch of Composers and appends them in the existing Users pool.
+     Loades next batch of Composers and appends them in the existing Composers pool.
      
      @param onSuccess Success completion block. New composers are loaded at index: newComposerAtIndex and with cardinality: numOfNewComposers
      @param onFailure Failure completion block. Contains an NSError object as parameter.
@@ -188,7 +191,7 @@ class ComposersViewModel: ComposersViewModelProtocol
      */
     func loadMoreComposers(onSuccess: @escaping (_ newComposerAtIndex: NSInteger, _ numOfNewComposers: NSInteger) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     {
-        model?.loadMoreComposers(onSuccess:
+        currentModel?.loadMoreComposers(onSuccess:
         {
             (newComposerAtIndex, numOfNewComposers) in
             
@@ -202,27 +205,39 @@ class ComposersViewModel: ComposersViewModelProtocol
         })
     }
     
+    /**
+     Searches for a composer for the given name.
+     It sets the Model to 'SearchComposersModel' in order to perform a search and change the datasource using the existing Views.
+     
+     @param name Composer's name
+     
+     */
     func searchComposers(withName name: String)
     {
-        model = SearchComposersModel()
-        model?.composerName = name
-    }
-    
-    func cancelSearchComposers()
-    {
-        model = popularComposersModel
+        currentModel = SearchComposersModel()
+        currentModel?.composerName = name
     }
     
     /**
-     Invoke this method from the View in order to present the Composer Details screen.
+     Cancels searching for a composer.
+     It sets the Model back to the default 'PopularComposersModel' in order to change to the default datasource and show the most popular composers.
+     
+     */
+    func cancelSearchComposers()
+    {
+        currentModel = popularComposersModel
+    }
+    
+    /**
+     Invoke this method from the View in order to present the Composer's 'relative tracks' screen.
      
      @param indexPath Indexpath of selected Composer.
      
      */
-    func showUserDetailsForComposerAtIndex(indexPath: NSIndexPath)
+    func showRelativeTracksForComposerAtIndex(indexPath: NSIndexPath)
     {
-        let selectedComposer = model?.composers?[indexPath.row]
-        self.coordinatorDelegate?.showComposerDetails(composer: selectedComposer!)
+        let selectedComposer = currentModel?.composers?[indexPath.row]
+        coordinatorDelegate?.showRelativeTracks(forComposer: selectedComposer!)
     }
     
     /**
@@ -233,13 +248,13 @@ class ComposersViewModel: ComposersViewModelProtocol
      */
     func startDownloadImageForComposerAtIndexPath(indexPath: NSIndexPath)
     {
-        guard indexPath.row <= (model?.composers?.count)! - 1 else { return }
+        guard indexPath.row <= (currentModel?.composers?.count)! - 1 else { return }
         
-        let composer = model?.composers![indexPath.row]
+        let composer = currentModel?.composers![indexPath.row]
         
         guard composer!.mainImage == nil else { return }
         
-        startDownloadForRecord(for: composer!, indexPath: indexPath)
+        startImageDownloadForRecord(for: composer!, indexPath: indexPath)
     }
     
     /**
@@ -293,20 +308,16 @@ class ComposersViewModel: ComposersViewModelProtocol
     
     // MARK: - AsynImageDownload -
     
-    func startDownloadForRecord(for composer: ComposerVO, indexPath: NSIndexPath)
+    func startImageDownloadForRecord(for record: ImageDownloadProtocol, indexPath: NSIndexPath)
     {
         guard pendingOperations.downloadsInProgress[indexPath] == nil else { return }
         
-        let downloader = ImageDownloader(composer: composer)
+        let downloader = ImageDownloader(obj: record)
         
         downloader.completionBlock = {
             if downloader.isCancelled {
                 return
             }
-//            dispatch_async(dispatch_get_main_queue(), {
-//                self.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-//                self.viewDelegate?.didLoadUserImageAtIndex(indexPath)
-//            })
             
             DispatchQueue.main.async {
                 self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)

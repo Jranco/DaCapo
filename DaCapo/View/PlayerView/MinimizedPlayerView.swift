@@ -29,6 +29,7 @@ class MinimizedPlayerView: UIView
     @IBOutlet var composerLabel: UILabel!
     @IBOutlet var trackDescriptionLabel: UILabel!
     @IBOutlet var stateLabel: UILabel!
+    @IBOutlet var spinner: UIActivityIndicatorView!
 
     // MARK: LifeCycle
     
