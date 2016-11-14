@@ -13,7 +13,17 @@ struct Constants
 {
     struct Colors
     {
-        //        static let darkGreen  = UIColor.init(red: 51.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+        static let navigationBarTintColor = UIColor.init(red: 5.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+        static let navigationTintColor    = UIColor.white
+    }
+    
+    struct YoutubeServices
+    {
+        static let API_KEY = "AIzaSyCjMasplfcJ5e7RO4Yf9haDKr3Tmgf1l0w" as String
+    }
+    
+    struct SpotifyServices
+    {
     }
     
     struct AsyncImageDownloader

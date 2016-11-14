@@ -17,11 +17,12 @@ class ComposersCoordinator: Coordinator
     init(window: UIWindow)
     {
         self.window = window
-        navigationController    = UINavigationController.init()
-        navigationController.navigationBar.isOpaque     = true
-        navigationController.navigationBar.barTintColor = UIColor.init(red: 5.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-        navigationController.navigationBar.tintColor    = UIColor.white
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        navigationController = UINavigationController.init()
+        navigationController.navigationBar.isOpaque            = true
+        navigationController.navigationBar.barTintColor        = Constants.Colors.navigationBarTintColor
+        navigationController.navigationBar.tintColor           = Constants.Colors.navigationTintColor
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Constants.Colors.navigationTintColor]
         
         let storyboard = UIStoryboard(name: "Container", bundle: nil)
 
@@ -36,16 +37,18 @@ class ComposersCoordinator: Coordinator
         
         let viewModel   = ComposersViewModel()
         viewModel.currentModel = PopularComposersModel()
-        viewModel.popularComposersModel = viewModel.currentModel as! PopularComposersModel
+        viewModel.popularComposersModel = viewModel.currentModel as? PopularComposersModel
         viewModel.coordinatorDelegate = self
         
         composersTableViewController.viewModel = viewModel
         
         navigationController.setViewControllers([composersTableViewController], animated: true)
+        
         containerViewController.addChildViewController(navigationController)
         containerViewController.view.addSubview(navigationController.view)
         navigationController.view.bounds = containerViewController.view.bounds
         navigationController.didMove(toParentViewController: containerViewController)
+        
         window.rootViewController = containerViewController
     }
 }

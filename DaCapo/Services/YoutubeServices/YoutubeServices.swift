@@ -83,7 +83,7 @@ class YoutubeServices: NSObject
         let pageToken  = NSURLQueryItem(name: "pageToken", value: token)
         let order      = NSURLQueryItem(name: "order", value: order)
         let type       = NSURLQueryItem(name: "type", value: "video")
-        let key        = NSURLQueryItem(name: "key", value: "AIzaSyCjMasplfcJ5e7RO4Yf9haDKr3Tmgf1l0w")
+        let key        = NSURLQueryItem(name: "key", value: Constants.YoutubeServices.API_KEY)
         
         urlComponents.queryItems = [q          as URLQueryItem,
                                     part       as URLQueryItem,

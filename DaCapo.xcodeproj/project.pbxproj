@@ -318,12 +318,12 @@
 		E91386781DD1A997001CE163 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E9C2CC311DD9391D002D4199 /* PlayerView */,
-				E937E82B1DD7795E0010149F /* ContainerView */,
-				E937E8241DD75A420010149F /* YTPlayerView */,
 				E94F53FC1DD3F8E800E24B88 /* Common */,
+				E937E82B1DD7795E0010149F /* ContainerView */,
 				E94F53EB1DD3F67B00E24B88 /* ComposersView */,
 				E937E8141DD6F7930010149F /* ComposerTracks */,
+				E9C2CC311DD9391D002D4199 /* PlayerView */,
+				E937E8241DD75A420010149F /* YTPlayerView */,
 			);
 			path = View;
 			sourceTree = "<group>";

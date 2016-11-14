@@ -22,6 +22,12 @@ protocol PlayerViewDelegate
 
 class PlayerView: UIView
 {
+    // MARK: - Player Datasource -
+    
+    var composer: ComposerProtocol?
+    var track: ComposerSnippetTrackProtocol?
+    
+    
     // MARK: - Player State -
     
     var state = PlayerState.none
@@ -58,6 +64,9 @@ class PlayerView: UIView
     
     func loadVideo(forComposer composer: ComposerProtocol, withTrack track: ComposerSnippetTrackProtocol)
     {
+        self.composer = composer
+        self.track    = track
+        
         doMinimizeVideo(animated: true)
 
         let playerVars = ["playsinline" : 1]
@@ -73,15 +82,13 @@ class PlayerView: UIView
         minimizedPlayer?.spinner.startAnimating()
     }
     
-    // MARK: - player button interaction -
+    // MARK: - Video Player actions -
     
     @IBAction func onDismissButton(_ sender: AnyObject)
     {
         delegate?.playerDidDismiss()
         doMinimizeVideo(animated: true)
     }
-    
-    // MARK: - Video Player actions -
     
     func doMinimizeVideo(animated: Bool)
     {
@@ -119,8 +126,8 @@ class PlayerView: UIView
         frame = CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-20)
 
         minimizedPlayer?.removeFromSuperview()
-        player?.isHidden          = false
-        topBar.isHidden = false
+        player?.isHidden = false
+        topBar.isHidden  = false
     }
 }
 
@@ -159,7 +166,7 @@ extension PlayerView: YTPlayerViewDelegate
                 
         minimizedPlayer?.stateLabel.text = stateStr
 
-        if(state == YTPlayerState.playing)
+        if(state == YTPlayerState.playing && player.isHidden == true)
         {
             doMinimizeVideo(animated: false)
         }

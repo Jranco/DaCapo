@@ -10,17 +10,9 @@ import UIKit
 
 class ContainerViewController: UIViewController
 {
-    // MARK: - Player subviews -
+    // MARK: - Subviews -
     
     var playerView: PlayerView?
-    
-    // MARK: - ContainerState -
-    
-    // MARK: - Player Datasource -
-    
-    var composer: ComposerProtocol?
-    var track: ComposerSnippetTrackProtocol?
-    
     
     // MARK: - LifeCycle -
     
@@ -36,7 +28,7 @@ class ContainerViewController: UIViewController
     {
         super.viewWillAppear(animated)
         
-        playerView?.frame          = CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 20)
+        playerView?.frame = CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 20)
     }
 
     override func didReceiveMemoryWarning()
@@ -44,11 +36,10 @@ class ContainerViewController: UIViewController
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Start Player -
+    
     func doStartVideo(forComposer composer: ComposerProtocol, forTrack track: ComposerSnippetTrackProtocol)
     {
-        self.composer = composer
-        self.track    = track
-        
         view.addSubview(playerView!)
 
         playerView?.loadVideo(forComposer: composer, withTrack: track)
