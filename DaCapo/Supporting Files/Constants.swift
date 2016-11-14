@@ -21,9 +21,14 @@ struct Constants
         static let MaxConcurrentImageDownloadOperationCount = 4 as Int
     }
     
-    struct ComposerListView
+    struct ComposerTableViewController
     {
-        static let ComposerListTableViewCellHeight          = 70 as CGFloat
+        static let ComposerListTableViewCellHeight    = 70 as CGFloat
+    }
+    
+    struct ComposerTracksViewController
+    {
+        static let ComposerTracksTableViewCellHeight  = 140 as CGFloat
     }
     
     struct PopularComposersModel

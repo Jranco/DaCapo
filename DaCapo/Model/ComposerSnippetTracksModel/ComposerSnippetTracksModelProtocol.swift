@@ -22,6 +22,5 @@ protocol ComposerSnippetTracksModelProtocol
     func loadMoreSnippetTracks(onSuccess: @escaping (_ newSnippetTracks: NSInteger, _ numOfNewSnippetTracks: NSInteger) -> Void, onFailure: @escaping (NSError) -> Void)
 
     func loadSnippetTracks(forArtist artist: String, withPageToken pageToken: String, withLimit limit: Int, onSuccess: @escaping (_ composerSnippetTracks: [ComposerSnippetTrackVO]) -> Void, onFailure: @escaping (NSError) -> Void)
-
 }
 

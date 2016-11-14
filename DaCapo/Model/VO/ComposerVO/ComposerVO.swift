@@ -16,7 +16,7 @@ class ComposerVO: ComposerProtocol, ImageDownloadProtocol, Mappable
     var mainImage: UIImage?
     
     var mainImageURL: String?
-        {
+    {
         get {
             
             guard images != nil && (images?.count)! > 0 else { return nil }

@@ -45,10 +45,6 @@ class PlayerView: UIView
     
     override func awakeFromNib()
     {
-//        minimizedPlayer?.frame = CGRect.init(x: 0, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50)
-//
-//        addSubview(minimizedPlayer!)
-        
         player.delegate           = self
         minimizedPlayer?.delegate = self
     }
@@ -69,8 +65,12 @@ class PlayerView: UIView
         player.load(withVideoId: track.videoId, playerVars: playerVars)
         player?.isHidden = true
         player.frame = CGRect.zero
+        
         minimizedPlayer?.composerLabel.text         = composer.name
         minimizedPlayer?.trackDescriptionLabel.text = track.title
+        minimizedPlayer?.stateLabel.text            = ""
+        minimizedPlayer?.spinner.isHidden           = false
+        minimizedPlayer?.spinner.startAnimating()
     }
     
     // MARK: - player button interaction -
@@ -135,6 +135,9 @@ extension PlayerView: YTPlayerViewDelegate
     
     func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState)
     {
+        minimizedPlayer?.spinner.isHidden = true
+        minimizedPlayer?.spinner.stopAnimating()
+        
         var stateStr = ""
         
         switch state {
@@ -153,7 +156,7 @@ extension PlayerView: YTPlayerViewDelegate
         default:
             stateStr = "unknown"
         }
-        
+                
         minimizedPlayer?.stateLabel.text = stateStr
 
         if(state == YTPlayerState.playing)

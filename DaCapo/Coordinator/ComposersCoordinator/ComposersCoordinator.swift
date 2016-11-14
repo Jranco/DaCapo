@@ -35,8 +35,8 @@ class ComposersCoordinator: Coordinator
         guard let composersTableViewController = (storyboard.instantiateViewController(withIdentifier: "ComposersTableViewController") as? ComposersTableViewController) else { return }
         
         let viewModel   = ComposersViewModel()
-        viewModel.model = PopularComposersModel()
-        viewModel.popularComposersModel = viewModel.model as! PopularComposersModel
+        viewModel.currentModel = PopularComposersModel()
+        viewModel.popularComposersModel = viewModel.currentModel as! PopularComposersModel
         viewModel.coordinatorDelegate = self
         
         composersTableViewController.viewModel = viewModel
@@ -52,7 +52,7 @@ class ComposersCoordinator: Coordinator
 
 extension ComposersCoordinator: ComposersViewModelCoordinatorDelegate
 {
-    func showComposerDetails(composer: ComposerVO)
+    func showRelativeTracks(forComposer  composer: ComposerVO)
     {
         let composerTracksCoordinator = ComposerTracksCoordinator.init(window: window, navigationController: navigationController, containerViewController: containerViewController as! ContainerViewController)
         composerTracksCoordinator.composerVO = composer

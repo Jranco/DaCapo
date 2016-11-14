@@ -11,12 +11,11 @@ import ObjectMapper
 
 class ComposersModel: ComposersModelProtocol
 {
-    var composerName: String? = ""
-    var composersTotal: Int? = 0
-
-    // MARK: - PopularComposersModelProtocol -
+    // MARK: - ComposersModelProtocol -
     
+    var composerName: String? = ""
     var composers: [ComposerVO]?
+    var composersTotal: Int?  = 0
     
     func reloadComposers(onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void)
     {

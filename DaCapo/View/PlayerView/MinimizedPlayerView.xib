@@ -38,6 +38,12 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="czh-Nk-INl">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="VWs-Ua-DsU"/>
+                        <constraint firstAttribute="width" constant="20" id="cqn-eD-9Za"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -52,13 +58,16 @@
                 <constraint firstItem="HFZ-hv-VB5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eWE-0c-GWQ"/>
                 <constraint firstItem="HFZ-hv-VB5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="guT-1u-EXE"/>
                 <constraint firstItem="OgT-Hi-m7n" firstAttribute="leading" secondItem="HFZ-hv-VB5" secondAttribute="trailing" id="i3K-cq-1Xu"/>
+                <constraint firstItem="czh-Nk-INl" firstAttribute="centerY" secondItem="HFZ-hv-VB5" secondAttribute="centerY" id="nCy-Em-4Iq"/>
                 <constraint firstItem="OTl-dX-FhT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oKR-jq-hey"/>
                 <constraint firstItem="2It-8p-Qpf" firstAttribute="top" secondItem="OgT-Hi-m7n" secondAttribute="bottom" constant="-4" id="qVz-kA-Y0D"/>
                 <constraint firstAttribute="trailing" secondItem="2It-8p-Qpf" secondAttribute="trailing" constant="4" id="r7m-bc-K4P"/>
+                <constraint firstItem="czh-Nk-INl" firstAttribute="centerX" secondItem="HFZ-hv-VB5" secondAttribute="centerX" id="v0g-PQ-IU6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="composerLabel" destination="OgT-Hi-m7n" id="qSG-Ub-2hj"/>
+                <outlet property="spinner" destination="czh-Nk-INl" id="XTg-kU-DOB"/>
                 <outlet property="stateLabel" destination="HFZ-hv-VB5" id="OTN-Wg-V69"/>
                 <outlet property="trackDescriptionLabel" destination="2It-8p-Qpf" id="ot4-TS-6eu"/>
             </connections>

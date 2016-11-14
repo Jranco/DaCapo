@@ -25,7 +25,7 @@ class ComposerTracksViewController: UIViewController
     // MARK: - ViewModel -
     
     var viewModel: ComposerSnippetTracksViewModel?
-        {
+    {
         willSet{
             
             viewModel?.viewDelegate = nil
@@ -43,14 +43,16 @@ class ComposerTracksViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // Configure Tableview
         tableView.dataSource = self
         tableView.delegate   = self
 
-        tableView.registerReusableCell(LoadingMoreUsersTableViewCell.self)
+        tableView.registerReusableCell(LoadingMoreTableViewCell.self)
         tableView.registerReusableCell(ComposerTracksTableViewCell.self)
 
         tableView.tableFooterView = UIView()
         
+        // Set title
         self.viewModel?.title(
             completionBlock: {
                 (title) in
@@ -89,7 +91,7 @@ class ComposerTracksViewController: UIViewController
         super.viewDidLayoutSubviews()
         
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.size.height, 0, 0, 0)
-        initTableViewOffsetY = tableView.contentOffset.y
+        initTableViewOffsetY   = tableView.contentOffset.y
         
         composerImageView.setRoundedCorners()
         
@@ -107,7 +109,7 @@ class ComposerTracksViewController: UIViewController
     {
         self.tableView.isUserInteractionEnabled = false
         
-        self.viewModel?.refreshUsers(
+        self.viewModel?.refreshTracks(
             onSuccess: {
                 self.tableView.reloadData()
                 self.tableView.isUserInteractionEnabled = true
@@ -189,7 +191,7 @@ extension ComposerTracksViewController: UITableViewDataSource
     
     func tableViewCellForIndexPath(indexPath: NSIndexPath) -> UITableViewCell
     {
-        if(viewModel?.typeOfCellAtIndexPath(indexPath: indexPath) == UserListCellType.LoadMoreComposers)
+        if(viewModel?.typeOfCellAtIndexPath(indexPath: indexPath) == ComposerTracksListCellType.LoadMoreTracks)
         {
             return loadingMoreUsersTableViewCell(indexPath: indexPath)
         }
@@ -199,9 +201,9 @@ extension ComposerTracksViewController: UITableViewDataSource
         }
     }
     
-    func loadingMoreUsersTableViewCell(indexPath: NSIndexPath) -> LoadingMoreUsersTableViewCell
+    func loadingMoreUsersTableViewCell(indexPath: NSIndexPath) -> LoadingMoreTableViewCell
     {
-        let cell = tableView.dequeueReusableCell(indexPath: indexPath as IndexPath) as LoadingMoreUsersTableViewCell
+        let cell = tableView.dequeueReusableCell(indexPath: indexPath as IndexPath) as LoadingMoreTableViewCell
         
         cell.spinner.startAnimating()
         
@@ -226,11 +228,9 @@ extension ComposerTracksViewController: UITableViewDataSource
     {
         let cell = self.tableView.dequeueReusableCell(indexPath: indexPath as IndexPath) as ComposerTracksTableViewCell
         
-        let composerTrackData = self.viewModel?.composerSnippetTracksAtIndexPath(indexPath: indexPath)
+        let composerTrackData = self.viewModel?.composerSnippetTrackAtIndexPath(indexPath: indexPath)
         
         cell.composerTrackData = composerTrackData
-        
-        cell.trackImageView.frame = CGRect.init(x: 0, y: 0, width: 100, height: 30)
         
         if (!self.tableView.isDragging && !self.tableView.isDecelerating)
         {
@@ -246,15 +246,11 @@ extension ComposerTracksViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 140
+        return Constants.ComposerTracksViewController.ComposerTracksTableViewCellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        //        guard tableView.cellForRowAtIndexPath(indexPath)?.isKindOfClass(ComposersTableViewCell) == true else { return }
-        //
-        //        self.viewModel?.showComposerDetailsForComposerAtIndex(indexPath: indexPath)
-  
+    {  
         self.viewModel?.didSelectTrackAtIndex(indexPath: indexPath as NSIndexPath)
     }
     

@@ -69,44 +69,43 @@ protocol ComposerSnippetTracksViewModelProtocol
     func title(completionBlock: (_ title: String) -> Void)
     
     /**
-     The 'composersCount' variable contains the cardinality of current loaded Users in the Model.
+     The 'composerSnippetTracksCount' variable contains the cardinality of current loaded Composers in the Model.
      
      */
     var composerSnippetTracksCount: Int { get }
     
     /**
-     The 'pendingOperations' variable is an instance of 'PendingOperations' class and holds information regarding download progress of Composers' images.
+     The 'pendingOperations' variable is an instance of 'PendingOperations' class and holds information regarding download progress of Tracks' images.
      
      */
     var pendingOperations: PendingOperations { get }
     
     /**
-     The 'didLoadAllComposers' variable is a boolean that has value of 'true' if all Composers are fetched from the API, otherwise has 'false'.
+     The 'didLoadAllComposers' variable is a boolean that has value of 'true' if all Tracks are fetched from the API, otherwise has 'false'.
      
      */
     func didLoadAllComposerSnippetTracks() -> Bool
     
     /**
-     The 'composerAtIndexPath' function fetches and returns a requested Composer's data.
+     The 'composerSnippetTracksAtIndexPath' function fetches and returns a requested Track's data.
      
-     @param  indexPath indexPath of Composer to be fetched.
-     @return ComposerVO object, which is the actual Composer data.
+     @param  indexPath indexPath of Track to be fetched.
+     @return ComposerSnippetTrackVO object, which is the actual Track data.
      
      */
-    func composerSnippetTracksAtIndexPath(indexPath: NSIndexPath) -> ComposerSnippetTrackVO?
+    func composerSnippetTrackAtIndexPath(indexPath: NSIndexPath) -> ComposerSnippetTrackVO?
     
     /**
      Returns type of cell, given the indexPath.
      
      @param indexPath IndexPath of Cell.
-     @param completionBlock Completion block, passing the cell type as parameter.
+     @return ComposerTracksListCellType
      
      */
-    //TODO:
-    func typeOfCellAtIndexPath(indexPath: NSIndexPath) -> UserListCellType
+    func typeOfCellAtIndexPath(indexPath: NSIndexPath) -> ComposerTracksListCellType
     
     /**
-     Determines if current Composer pool is empty or not.
+     Determines if current Track pool is empty or not.
      
      @return true if user list is empty, false otherwise
      
@@ -114,43 +113,43 @@ protocol ComposerSnippetTracksViewModelProtocol
     func composerSnippetTracksListIsEmpty() -> Bool
     
     /**
-     Refreshes Composer pool.
+     Refreshes Track pool.
      
      @param onSuccess Success completion block.
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
-    func refreshUsers(onSuccess: @escaping () -> Void, onFailure: @escaping (_ error: NSError) -> Void)
+    func refreshTracks(onSuccess: @escaping () -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     
     /**
-     Loades next batch of Composers and appends them in the existing Users pool.
+     Loades next batch of Tracks and appends them in the existing Tracks pool.
      
-     @param onSuccess Success completion block. New composers are loaded at index: newComposerAtIndex and with cardinality: numOfNewComposers
+     @param onSuccess Success completion block. New tracks are loaded at index: newComposerSnippetTrackAtIndex and with cardinality: numOfNewComposerSnippetTracks
      @param onFailure Failure completion block. Contains an NSError object as parameter.
      
      */
     func loadMoreComposerSnippetTracks(onSuccess: @escaping (_ newComposerSnippetTrackAtIndex: NSInteger, _ numOfNewComposerSnippetTracks: NSInteger) -> Void, onFailure: @escaping (_ error: NSError) -> Void)
     
     /**
-     Invoke this method from the View in order to present the Composer Details screen.
+     Invoke this method from the View in order to play the Track
      
-     @param indexPath Indexpath of selected Composer.
+     @param indexPath Indexpath of selected Track.
      
      */
     func didSelectTrackAtIndex(indexPath: NSIndexPath)
     
     /**
-     Starts async download of Composer's image for the given indexPath.
+     Starts async download of Tracks's image for the given indexPath.
      
-     @param indexPath Indexpath of Composer
+     @param indexPath Indexpath of Track
      
      */
     func startDownloadImageForComposerSnippetTrackAtIndexPath(indexPath: NSIndexPath)
     
     /**
-     Starts async download of Composer's images for the given indexPaths of visible rows.
+     Starts async download of Tracks' images for the given indexPaths of visible rows.
      
-     @param indexPath Indexpath of Composer
+     @param indexPath Indexpath of Track
      
      */
     func loadImagesForOnscreenCells(pathsArray: [NSIndexPath])

@@ -24,9 +24,9 @@ class ImageDownloader: Operation
 {
     var imageDownloadObj: ImageDownloadProtocol
     
-    init(composer: ImageDownloadProtocol)
+    init(obj: ImageDownloadProtocol)
     {
-        self.imageDownloadObj = composer
+        self.imageDownloadObj = obj
     }
     
     override func main()
