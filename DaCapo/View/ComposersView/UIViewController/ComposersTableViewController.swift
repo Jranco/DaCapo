@@ -80,10 +80,6 @@ class ComposersTableViewController: UITableViewController
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
-        tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
-        tableView.setNeedsUpdateConstraints()
-        tableView.setNeedsLayout()
     }
 
     override func didReceiveMemoryWarning()
