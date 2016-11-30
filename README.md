@@ -22,11 +22,11 @@ DaCapo is an app for searching classical music Composers and playing their track
 The DaCapo project's architecture is following the MVVM-C design pattern.
 
 
-![Alt text](/mgames/DaCapo/MVVM-C diagram.png?raw=true "Optional Title")
+![Alt text](/MVVM-C diagram.png?raw=true "Optional Title")
 
 The following ERD diagram projects the structure of the Views’ stack.
 
-![Alt text](/mgames/DaCapo/ERD diagram.png?raw=true "Optional Title")
+![Alt text](/ERD diagram.png?raw=true "Optional Title")
 
 ## Space for improvement
 
