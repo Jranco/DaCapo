@@ -19,7 +19,7 @@ struct Constants
     
     struct YoutubeServices
     {
-        static let API_KEY = "AIzaSyCjMasplfcJ5e7RO4Yf9haDKr3Tmgf1l0w" as String
+        static let API_KEY = "YOUR_API_KEY" as String
     }
     
     struct SpotifyServices
